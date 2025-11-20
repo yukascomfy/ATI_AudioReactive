@@ -1,5 +1,5 @@
 # ATI_AudioReactive
-Mixing RyanOnTheInside’s reactive nodes with Fillip’s Path Animation
+ComfyUI Node, Mixing RyanOnTheInside’s reactive nodes with Fillip’s Path Animation
 
 # _RyanOnTheInside:_ 
 
