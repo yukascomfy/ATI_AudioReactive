@@ -16,7 +16,9 @@ Little experiment of mixing RyanOnTheInside's reactive nodes with Fillip's ATI P
 
 ## Main Controls
 movement_mode: Defines how the dot moves.
+
 amplitude: The dot's position is locked to the volume. Silence = Start of path, Loud = End of path.
+
 accumulate: The dot travels along the path like a car. Sound makes it move forward; silence makes it stop. It bounces when it hits the ends.
 
 ## Sensitivity:
