@@ -1,0 +1,2577 @@
+{
+  "id": "3d2fdcb5-276a-4b64-89db-0add5fe38bb3",
+  "revision": 0,
+  "last_node_id": 541,
+  "last_link_id": 990,
+  "nodes": [
+    {
+      "id": 492,
+      "type": "DownloadOpenUnmixModel",
+      "pos": [
+        -1936.8559703566002,
+        921.3100291820509
+      ],
+      "size": [
+        330.4550785160649,
+        104.95037037808015
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "OPEN_UNMIX_MODEL",
+          "type": "OPEN_UNMIX_MODEL",
+          "links": [
+            885
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_ryanonyheinside",
+        "ver": "2.0.12",
+        "Node name for S&R": "DownloadOpenUnmixModel"
+      },
+      "widgets_values": [
+        "umxl"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 441,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -1843.4518386504496,
+        671.5841676152469
+      ],
+      "size": [
+        269.4439453125,
+        146.90960025159984
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 805
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            824
+          ]
+        }
+      ],
+      "title": "CLIP Text Encode (Negative Prompt)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.34",
+        "Node name for S&R": "CLIPTextEncode",
+        "ue_properties": {
+          "version": "7.2.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走,过曝，"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 440,
+      "type": "VAELoader",
+      "pos": [
+        -2193.1770186741205,
+        154.29301763935413
+      ],
+      "size": [
+        322.9411774822597,
+        58
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 0,
+          "links": [
+            822,
+            825
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.34",
+        "Node name for S&R": "VAELoader",
+        "models": [
+          {
+            "name": "wan_2.1_vae.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors",
+            "directory": "vae"
+          }
+        ],
+        "ue_properties": {
+          "version": "7.2.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "Wan2.1\\wan_2.1_vae.safetensors"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 444,
+      "type": "TorchCompileModelWanVideo",
+      "pos": [
+        -1852.5790671173988,
+        34.55568853697856
+      ],
+      "size": [
+        285.80370281895057,
+        178
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 950
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            808
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "3fcd22f2fe2be69c3229f192362b91888277cbcb",
+        "Node name for S&R": "TorchCompileModelWanVideo",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.2.2"
+        }
+      },
+      "widgets_values": [
+        "inductor",
+        false,
+        "default",
+        false,
+        1024,
+        false
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 445,
+      "type": "PathchSageAttentionKJ",
+      "pos": [
+        -1839.8152163069606,
+        421.1667487880224
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 808
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            809
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "3fcd22f2fe2be69c3229f192362b91888277cbcb",
+        "Node name for S&R": "PathchSageAttentionKJ",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.2.2"
+        }
+      },
+      "widgets_values": [
+        "auto"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 446,
+      "type": "ModelSamplingSD3",
+      "pos": [
+        -1841.6104408573417,
+        521.7699312426901
+      ],
+      "size": [
+        283.85629731974745,
+        58
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 809
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            874
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.34",
+        "Node name for S&R": "ModelSamplingSD3",
+        "ue_properties": {
+          "version": "7.2.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        5
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 452,
+      "type": "CLIPVisionEncode",
+      "pos": [
+        -1518.1818877442656,
+        177.6487481304968
+      ],
+      "size": [
+        290.390625,
+        78
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip_vision",
+          "type": "CLIP_VISION",
+          "link": 816
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 817
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CLIP_VISION_OUTPUT",
+          "type": "CLIP_VISION_OUTPUT",
+          "links": [
+            827
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.65",
+        "Node name for S&R": "CLIPVisionEncode",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.2.2"
+        }
+      },
+      "widgets_values": [
+        "none"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 447,
+      "type": "CLIPVisionLoader",
+      "pos": [
+        -1512.2800863186992,
+        68.92698909971419
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP_VISION",
+          "type": "CLIP_VISION",
+          "links": [
+            816
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.65",
+        "Node name for S&R": "CLIPVisionLoader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.2.2"
+        }
+      },
+      "widgets_values": [
+        "Wan2.1\\clip_vision_h.safetensors"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 463,
+      "type": "Reroute",
+      "pos": [
+        -1427.0899610886497,
+        -15.73961600468034
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 875
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "MODEL",
+          "links": [
+            844
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 454,
+      "type": "WanTrackToVideo",
+      "pos": [
+        -1522.3258967327222,
+        301.1620108054224
+      ],
+      "size": [
+        300.3158264160156,
+        312
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 823
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 824
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 825
+        },
+        {
+          "name": "start_image",
+          "type": "IMAGE",
+          "link": 826
+        },
+        {
+          "name": "clip_vision_output",
+          "shape": 7,
+          "type": "CLIP_VISION_OUTPUT",
+          "link": 827
+        },
+        {
+          "name": "tracks",
+          "type": "STRING",
+          "widget": {
+            "name": "tracks"
+          },
+          "link": 933
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 829
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 830
+        },
+        {
+          "name": "length",
+          "type": "INT",
+          "widget": {
+            "name": "length"
+          },
+          "link": 977
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            819
+          ]
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            820
+          ]
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            821
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.65",
+        "Node name for S&R": "WanTrackToVideo",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.2.2"
+        }
+      },
+      "widgets_values": [
+        "[]",
+        832,
+        480,
+        81,
+        1,
+        220,
+        10
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 491,
+      "type": "AudioSeparatorSimple",
+      "pos": [
+        -2189.0868923498106,
+        920.7828405583488
+      ],
+      "size": [
+        243.3138372833089,
+        106
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "OPEN_UNMIX_MODEL",
+          "link": 885
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 886
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            904,
+            945,
+            962
+          ]
+        },
+        {
+          "name": "drums_audio",
+          "type": "AUDIO",
+          "links": [
+            914,
+            916
+          ]
+        },
+        {
+          "name": "vocals_audio",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "bass_audio",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "other_audio",
+          "type": "AUDIO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_ryanonyheinside",
+        "ver": "2.0.12",
+        "Node name for S&R": "AudioSeparatorSimple"
+      },
+      "widgets_values": [],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 470,
+      "type": "AudioFeatureExtractor",
+      "pos": [
+        -1934.9884190482026,
+        1062.0575633639273
+      ],
+      "size": [
+        331.1329348355955,
+        198.07713166639405
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 904
+        },
+        {
+          "name": "frame_rate",
+          "type": "FLOAT",
+          "widget": {
+            "name": "frame_rate"
+          },
+          "link": 978
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "widget": {
+            "name": "frame_count"
+          },
+          "link": 930
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 931
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 932
+        }
+      ],
+      "outputs": [
+        {
+          "name": "feature",
+          "type": "FEATURE",
+          "links": [
+            913
+          ]
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_ryanonyheinside",
+        "ver": "2.0.12",
+        "Node name for S&R": "AudioFeatureExtractor"
+      },
+      "widgets_values": [
+        "spectral_centroid",
+        25,
+        0,
+        512,
+        512
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 456,
+      "type": "VHS_DuplicateImages",
+      "pos": [
+        -2498.009092610698,
+        1563.361775001337
+      ],
+      "size": [
+        271.1837832479937,
+        79.46016933565102
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 833
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            813
+          ]
+        },
+        {
+          "name": "count",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "title": "Lenght Repeat Images 🎥🅥🅗🅢",
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "08e8df15db24da292d4b7f943c460dc2ab442b24",
+        "Node name for S&R": "VHS_DuplicateImages",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.2.2"
+        }
+      },
+      "widgets_values": {
+        "multiply_by": 81
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 459,
+      "type": "PrimitiveInt",
+      "pos": [
+        -2499.628043988906,
+        1446.2025081055301
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            811,
+            812
+          ]
+        }
+      ],
+      "title": "Max Resolution",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.65",
+        "Node name for S&R": "PrimitiveInt",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.2.2"
+        }
+      },
+      "widgets_values": [
+        960,
+        "fixed"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 529,
+      "type": "PrimitiveFloat",
+      "pos": [
+        -2498.177587625142,
+        1349.5585502754643
+      ],
+      "size": [
+        268.0293140490462,
+        58
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            978,
+            979,
+            980,
+            981,
+            982
+          ]
+        }
+      ],
+      "title": "Fps",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.68",
+        "Node name for S&R": "PrimitiveFloat"
+      },
+      "widgets_values": [
+        16
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 449,
+      "type": "GetImageSizeAndCount",
+      "pos": [
+        -1910.9051402464581,
+        1645.3560464329398
+      ],
+      "size": [
+        304.2952878014552,
+        86
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 813
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": []
+        },
+        {
+          "label": "960 width",
+          "name": "width",
+          "type": "INT",
+          "links": [
+            829,
+            918,
+            931
+          ]
+        },
+        {
+          "label": "528 height",
+          "name": "height",
+          "type": "INT",
+          "links": [
+            830,
+            919,
+            932
+          ]
+        },
+        {
+          "label": "81 count",
+          "name": "count",
+          "type": "INT",
+          "links": [
+            924,
+            930,
+            977
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "87d0cf42db7d59992daba4d58a83655b5b359f44",
+        "Node name for S&R": "GetImageSizeAndCount",
+        "ue_properties": {
+          "version": "7.2.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 448,
+      "type": "ImageResizeKJ",
+      "pos": [
+        -1910.5571726053502,
+        1391.3036495285867
+      ],
+      "size": [
+        304.25807294827814,
+        218
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 810
+        },
+        {
+          "name": "get_image_size",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 811
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 812
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            817,
+            826,
+            833
+          ]
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "3fcd22f2fe2be69c3229f192362b91888277cbcb",
+        "Node name for S&R": "ImageResizeKJ",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.2.2"
+        }
+      },
+      "widgets_values": [
+        768,
+        768,
+        "lanczos",
+        true,
+        16,
+        "disabled"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 474,
+      "type": "VHS_LoadAudioUpload",
+      "pos": [
+        -2188.5809404413353,
+        1060.1722295789093
+      ],
+      "size": [
+        243.818359375,
+        204
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            886
+          ]
+        },
+        {
+          "name": "duration",
+          "type": "FLOAT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "1.7.7",
+        "Node name for S&R": "VHS_LoadAudioUpload"
+      },
+      "widgets_values": {
+        "audio": "Neon Pulse.mp3",
+        "start_time": 26.94444488525389,
+        "duration": 6,
+        "choose audio to upload": "image",
+        "audiopreview": {
+          "params": {
+            "start_time": 26.94444488525389,
+            "duration": 6,
+            "filename": "Neon Pulse.mp3",
+            "type": "input"
+          }
+        }
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 486,
+      "type": "wanBlockSwap",
+      "pos": [
+        -1848.932832545928,
+        254.14817954608793
+      ],
+      "size": [
+        283.9782248016302,
+        130
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 874
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            875
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "wanblockswap",
+        "ver": "1.0.0",
+        "Node name for S&R": "wanBlockSwap"
+      },
+      "widgets_values": [
+        20,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": 439,
+      "type": "CLIPLoader",
+      "pos": [
+        -2192.8472882877422,
+        245.906793623929
+      ],
+      "size": [
+        322.83647696703974,
+        106
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 0,
+          "links": [
+            805,
+            837
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.34",
+        "Node name for S&R": "CLIPLoader",
+        "models": [
+          {
+            "name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors?download=true",
+            "directory": "text_encoders"
+          }
+        ],
+        "ue_properties": {
+          "version": "7.2.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "Wan2.1\\umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+        "wan",
+        "default"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 509,
+      "type": "ImageConcanate",
+      "pos": [
+        -1546.0043041057222,
+        1633.048916396323
+      ],
+      "size": [
+        405.0865917819865,
+        114.81870010669172
+      ],
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 942
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 984
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            967
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "1.1.8",
+        "Node name for S&R": "ImageConcanate"
+      },
+      "widgets_values": [
+        "down",
+        true
+      ]
+    },
+    {
+      "id": 504,
+      "type": "WanVideoATITracksVisualize",
+      "pos": [
+        -1548.9023754386276,
+        1431.1130324608587
+      ],
+      "size": [
+        408.112175102547,
+        146.02328711460473
+      ],
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 985
+        },
+        {
+          "name": "tracks",
+          "type": "STRING",
+          "widget": {
+            "name": "tracks"
+          },
+          "link": 927
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            942
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-WanVideoWrapper",
+        "ver": "d3f33a9f09e774e43500eed1abf7d975997dd1ee",
+        "Node name for S&R": "WanVideoATITracksVisualize"
+      },
+      "widgets_values": [
+        "",
+        1,
+        6,
+        50
+      ]
+    },
+    {
+      "id": 510,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        -885.1604020282206,
+        683.910278870891
+      ],
+      "size": [
+        652.3553274119199,
+        1043.5908601531119
+      ],
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 967
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 945
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "frame_rate",
+          "type": "FLOAT",
+          "widget": {
+            "name": "frame_rate"
+          },
+          "link": 981
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "a7ce59e381934733bfae03b1be029756d6ce936d",
+        "Node name for S&R": "VHS_VideoCombine",
+        "ue_properties": {
+          "version": "7.2.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": {
+        "frame_rate": 25,
+        "loop_count": 0,
+        "filename_prefix": "AnimateDiff",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": false,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "AnimateDiff_00230-audio.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4",
+            "frame_rate": 16,
+            "workflow": "AnimateDiff_00230.png",
+            "fullpath": "C:\\ComfyUI_windows_portable\\ComfyUI\\output\\AnimateDiff_00230-audio.mp4"
+          }
+        }
+      }
+    },
+    {
+      "id": 453,
+      "type": "FL_KsamplerPlus",
+      "pos": [
+        -1179.8774052743645,
+        -37.957294188116784
+      ],
+      "size": [
+        286.61488521713864,
+        661.3813113717069
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 844
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 819
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 820
+        },
+        {
+          "name": "latent_image",
+          "shape": 7,
+          "type": "LATENT",
+          "link": 821
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 822
+        },
+        {
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": null
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": null
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": []
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            983,
+            984,
+            985
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_fill-nodes",
+        "ver": "c90ca9c767e59244478b10df6cf2ab7cb3166715",
+        "Node name for S&R": "FL_KsamplerPlus",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.2.2"
+        }
+      },
+      "widgets_values": [
+        777,
+        "fixed",
+        8,
+        3,
+        "uni_pc",
+        "simple",
+        1,
+        "latent",
+        1,
+        1,
+        0,
+        1,
+        false
+      ],
+      "color": "#16727c",
+      "bgcolor": "#4F0074"
+    },
+    {
+      "id": 506,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        -859.3592217565865,
+        -42.896570300343285
+      ],
+      "size": [
+        594.873325097401,
+        664.1803288035705
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 983
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 962
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "frame_rate",
+          "type": "FLOAT",
+          "widget": {
+            "name": "frame_rate"
+          },
+          "link": 982
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "a7ce59e381934733bfae03b1be029756d6ce936d",
+        "Node name for S&R": "VHS_VideoCombine",
+        "ue_properties": {
+          "version": "7.2.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": {
+        "frame_rate": 25,
+        "loop_count": 0,
+        "filename_prefix": "AnimateDiff",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": false,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "AnimateDiff_00229-audio.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4",
+            "frame_rate": 16,
+            "workflow": "AnimateDiff_00229.png",
+            "fullpath": "C:\\ComfyUI_windows_portable\\ComfyUI\\output\\AnimateDiff_00229-audio.mp4"
+          }
+        }
+      }
+    },
+    {
+      "id": 442,
+      "type": "UNETLoader",
+      "pos": [
+        -2195.5988850914914,
+        35.3938836948791
+      ],
+      "size": [
+        328.31432927067385,
+        82
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            806
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.34",
+        "Node name for S&R": "UNETLoader",
+        "models": [
+          {
+            "name": "wan2.1_vace_14B_fp16.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_vace_14B_fp16.safetensors",
+            "directory": "diffusion_models"
+          }
+        ],
+        "ue_properties": {
+          "version": "7.2.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "Wan2.1\\Wan2_1-I2V-ATI-14B_fp8_e4m3fn.safetensors",
+        "default"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 513,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        -2193.7310177380414,
+        510.28413514858244
+      ],
+      "size": [
+        327.4086047465819,
+        82
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 949
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            950
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.34",
+        "Node name for S&R": "LoraLoaderModelOnly",
+        "models": [
+          {
+            "name": "Wan21_CausVid_14B_T2V_lora_rank32.safetensors",
+            "url": "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan21_CausVid_14B_T2V_lora_rank32.safetensors",
+            "directory": "loras"
+          }
+        ],
+        "ue_properties": {
+          "version": "7.2.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "Wan2.1\\lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors",
+        0.8
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 540,
+      "type": "Note",
+      "pos": [
+        -1126.5782117079482,
+        1180.6902550824104
+      ],
+      "size": [
+        227.98190191171875,
+        565.5856780181904
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Parameters",
+      "properties": {},
+      "widgets_values": [
+        "Here is the complete list of parameters for the Audio Reactive Path Animator node and how they work:\n\nMain Controls\nmovement_mode: Defines how the dot moves.\namplitude: The dot's position is locked to the volume. Silence = Start of path, Loud = End of path.\naccumulate: The dot travels along the path like a car. Sound makes it move forward; silence makes it stop. It bounces when it hits the ends.\n\nSensitivity:\nIn Amplitude mode: Controls Range (how far down the path the dot goes).\nIn Accumulate mode: Controls Speed (how fast the dot travels).\nsmoothing: Smooths out jittery volume changes.\n0.0: Raw, instant reaction (can be jittery).\n1.0: No movement (completely flat).\nTip: Use ~0.3 - 0.5 for natural movement.\n\nAmplitude Mode Specifics (When movement_mode is amplitude)\nrelease: Controls how fast the dot returns to the start after a beat.\nLow (0.2): Snappy, returns instantly.\nHigh (0.8): Slow, smooth return. Great for \"one jump per rhythm\".\n\nAmplitude_curve: Acts as a Noise Gate / Expander.\n1.0: Linear (standard).\n> 1.0 (e.g., 3.0): Suppresses low-volume noise (\"meaningless jumps\") and accentuates loud beats. Use this to clean up the motion.\n\nAccumulate Mode Specifics (When movement_mode is accumulate)\nflip_on_beat: If enabled, the dot will reverse direction whenever it detects a beat, making it \"dance\" back and forth.\nbeat_threshold: Sensitivity for the flip_on_beat detection.\nLow (0.02): Flips on everything (hi-hats, snares).\nHigh (0.1): Flips only on big kicks.\n\nVisuals\nmotion_blur: Draws a streak connecting the previous frame to the current frame.\nEnable this to fix the \"double point\" or stroboscopic effect when the dot moves fast.\nblur_radius: Adds a static Gaussian blur (fuzziness) to the dot (like an out-of-focus camera).\ntrail_length: Leaves a fading trail behind the dot.\n\nshape\n, shape_size, shape_color, bg_color: Standard appearance controls.\nSystem\nduration_frames: Forces the animation to be a specific number of frames.\n0: Matches the audio length exactly.\n> 0: Stretches/squashes the audio to fit this exact frame count (useful for syncing with video models like Wan/Kling).\nframe_rate: The FPS of the output animation.\nfft_size, min_frequency, max_frequency: Advanced audio analysis settings to isolate specific frequency ranges (e.g., set min/max to 20-150Hz to only react to bass)."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 460,
+      "type": "LoadImage",
+      "pos": [
+        -2196.5970439292405,
+        1391.4431353441014
+      ],
+      "size": [
+        274.6416722233155,
+        333.09469261087884
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            810
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.65",
+        "Node name for S&R": "LoadImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.2.2"
+        }
+      },
+      "widgets_values": [
+        "ñor.png",
+        "image"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 495,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        -1126.967049787915,
+        679.3115630081859
+      ],
+      "size": [
+        228.32593052173672,
+        462.5792617869552
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 915
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 916
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "frame_rate",
+          "type": "FLOAT",
+          "widget": {
+            "name": "frame_rate"
+          },
+          "link": 980
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "08e8df15db24da292d4b7f943c460dc2ab442b24",
+        "Node name for S&R": "VHS_VideoCombine",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.2.2"
+        }
+      },
+      "widgets_values": {
+        "frame_rate": 25,
+        "loop_count": 0,
+        "filename_prefix": "AnimateDiff",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": false,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": false,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "AnimateDiff_00017-audio.mp4",
+            "subfolder": "",
+            "type": "temp",
+            "format": "video/h264-mp4",
+            "frame_rate": 16,
+            "workflow": "AnimateDiff_00017.png",
+            "fullpath": "C:\\ComfyUI_windows_portable\\ComfyUI\\temp\\AnimateDiff_00017-audio.mp4"
+          }
+        }
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 502,
+      "type": "AudioReactivePathAnimator",
+      "pos": [
+        -1553.5822465067704,
+        677.4473550482212
+      ],
+      "size": [
+        413.87947647185433,
+        680
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 914
+        },
+        {
+          "name": "opt_feature",
+          "shape": 7,
+          "type": "FEATURE",
+          "link": 913
+        },
+        {
+          "name": "frame_rate",
+          "type": "FLOAT",
+          "widget": {
+            "name": "frame_rate"
+          },
+          "link": 979
+        },
+        {
+          "name": "screen_width",
+          "type": "INT",
+          "widget": {
+            "name": "screen_width"
+          },
+          "link": 918
+        },
+        {
+          "name": "screen_height",
+          "type": "INT",
+          "widget": {
+            "name": "screen_height"
+          },
+          "link": 919
+        },
+        {
+          "name": "duration_frames",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "duration_frames"
+          },
+          "link": 924
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            915
+          ]
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "coordinates",
+          "type": "STRING",
+          "links": [
+            927,
+            933
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AudioReactivePathAnimator"
+      },
+      "widgets_values": [
+        "{\"paths\":[{\"id\":\"path_1763675909530\",\"name\":\"Path 1\",\"points\":[{\"x\":876.2356038075421,\"y\":933.8471454737172},{\"x\":876.2356038075421,\"y\":928.1764074496955},{\"x\":868.6650228229073,\"y\":920.6154234176664},{\"x\":864.8797323305898,\"y\":914.9446853936446},{\"x\":861.0944418382724,\"y\":909.2739473696229},{\"x\":857.309151345955,\"y\":901.7129633375938},{\"x\":851.6312156074788,\"y\":897.9324713215793},{\"x\":851.6312156074788,\"y\":894.1519793055647},{\"x\":849.7385703613202,\"y\":890.3714872895503},{\"x\":847.8459251151614,\"y\":880.920257249514},{\"x\":844.060634622844,\"y\":879.0300112415067},{\"x\":844.060634622844,\"y\":873.3592732174849},{\"x\":840.2753441305266,\"y\":865.7982891854558},{\"x\":840.2753441305266,\"y\":862.0177971694413},{\"x\":838.3826988843679,\"y\":858.2373051534269},{\"x\":834.5974083920504,\"y\":854.4568131374123},{\"x\":832.7047631458917,\"y\":850.6763211213978},{\"x\":832.7047631458917,\"y\":846.8958291053832},{\"x\":830.8121178997329,\"y\":841.2250910813615},{\"x\":828.9194726535743,\"y\":837.444599065347},{\"x\":827.0268274074156,\"y\":827.9933690253107},{\"x\":825.1341821612568,\"y\":820.4323849932816},{\"x\":823.2415369150981,\"y\":812.8714009612526},{\"x\":823.2415369150981,\"y\":805.3104169292235},{\"x\":821.3488916689394,\"y\":801.529924913209},{\"x\":819.4562464227807,\"y\":797.7494328971945},{\"x\":815.6709559304633,\"y\":788.2982028571582},{\"x\":813.7783106843045,\"y\":782.6274648331364},{\"x\":811.8856654381458,\"y\":775.0664808011073},{\"x\":809.9930201919872,\"y\":765.615250761071},{\"x\":809.9930201919872,\"y\":759.9445127370493},{\"x\":808.1003749458284,\"y\":752.3835287050202},{\"x\":806.2077296996697,\"y\":748.6030366890058},{\"x\":804.315084453511,\"y\":744.8225446729912},{\"x\":802.4224392073522,\"y\":739.1518066489695},{\"x\":800.5297939611936,\"y\":733.4810686249476},{\"x\":800.5297939611936,\"y\":727.8103306009259},{\"x\":796.7445034688761,\"y\":724.0298385849113},{\"x\":796.7445034688761,\"y\":720.2493465688968},{\"x\":794.8518582227174,\"y\":714.578608544875},{\"x\":794.8518582227174,\"y\":710.7981165288605},{\"x\":792.9592129765587,\"y\":705.1273785048387},{\"x\":791.0665677304,\"y\":695.6761484648024},{\"x\":791.0665677304,\"y\":690.0054104407807},{\"x\":789.1739224842413,\"y\":682.4444264087516},{\"x\":789.1739224842413,\"y\":672.9931963687153},{\"x\":785.3886319919238,\"y\":667.3224583446936},{\"x\":785.3886319919238,\"y\":661.6517203206718},{\"x\":783.4959867457651,\"y\":654.0907362886427},{\"x\":783.4959867457651,\"y\":648.419998264621},{\"x\":781.6033414996065,\"y\":644.6395062486064},{\"x\":781.6033414996065,\"y\":637.0785222165774},{\"x\":777.818051007289,\"y\":633.2980302005628},{\"x\":777.818051007289,\"y\":627.6272921765411},{\"x\":775.9254057611303,\"y\":623.8468001605265},{\"x\":774.0327605149715,\"y\":614.3955701204902},{\"x\":772.1401152688128,\"y\":610.6150781044757},{\"x\":770.2474700226542,\"y\":604.9443400804539},{\"x\":768.3548247764954,\"y\":597.383356048425},{\"x\":766.4621795303367,\"y\":591.7126180244031},{\"x\":764.569534284178,\"y\":586.0418800003814},{\"x\":762.6768890380192,\"y\":578.4808959683523},{\"x\":756.9989532995431,\"y\":572.8101579443305},{\"x\":755.1063080533844,\"y\":563.3589279042942},{\"x\":753.2136628072257,\"y\":555.7979438722653},{\"x\":751.321017561067,\"y\":550.1272058482434},{\"x\":749.4283723149083,\"y\":540.6759758082071},{\"x\":747.5357270687496,\"y\":535.0052377841854},{\"x\":745.6430818225908,\"y\":529.3344997601636},{\"x\":739.9651460841147,\"y\":519.8832697201273},{\"x\":739.9651460841147,\"y\":516.1027777041128},{\"x\":738.072500837956,\"y\":510.43203968009095},{\"x\":736.1798555917973,\"y\":502.87105564806194},{\"x\":734.2872103456385,\"y\":499.0905636320474},{\"x\":732.3945650994799,\"y\":493.41982560802563}],\"color\":\"#98D8C8\",\"closed\":false,\"isSinglePoint\":false,\"startTime\":0,\"endTime\":1,\"interpolation\":\"linear\",\"visibilityMode\":\"pop\"},{\"id\":\"path_1763675914734\",\"name\":\"Path 2\",\"points\":[{\"x\":433.35661620640303,\"y\":257.1390746071181},{\"x\":435.24926145256177,\"y\":260.91956662313265},{\"x\":435.24926145256177,\"y\":264.70005863914713},{\"x\":437.14190669872045,\"y\":270.37079666316896},{\"x\":440.9271971910379,\"y\":272.2610426711762},{\"x\":442.8198424371966,\"y\":276.04153468719073},{\"x\":444.71248768335533,\"y\":279.8220267032052},{\"x\":444.71248768335533,\"y\":285.49276472722704},{\"x\":446.605132929514,\"y\":289.2732567432415},{\"x\":448.49777817567275,\"y\":293.05374875925605},{\"x\":450.3904234218315,\"y\":298.7244867832778},{\"x\":452.28306866799016,\"y\":302.50497879929236},{\"x\":452.28306866799016,\"y\":308.17571682331413},{\"x\":456.06835916030764,\"y\":315.7367008553432},{\"x\":456.06835916030764,\"y\":323.2976848873722},{\"x\":459.85364965262505,\"y\":327.07817690338675},{\"x\":459.85364965262505,\"y\":332.7489149274085},{\"x\":463.63894014494247,\"y\":340.30989895943753},{\"x\":463.63894014494247,\"y\":344.09039097545207},{\"x\":465.5315853911012,\"y\":347.8708829914666},{\"x\":465.5315853911012,\"y\":351.65137500748114},{\"x\":465.5315853911012,\"y\":355.4318670234956},{\"x\":467.4242306372599,\"y\":368.66358907954645},{\"x\":469.3168758834186,\"y\":378.11481911958276},{\"x\":471.2095211295773,\"y\":385.6758031516118},{\"x\":473.10216637573603,\"y\":393.23678718364084},{\"x\":474.99481162189477,\"y\":402.68801722367715},{\"x\":478.7801021142122,\"y\":408.3587552476989},{\"x\":480.6727473603709,\"y\":415.91973927972793},{\"x\":482.5653926065296,\"y\":423.480723311757},{\"x\":482.5653926065296,\"y\":431.041707343786},{\"x\":484.45803785268834,\"y\":440.4929373838223},{\"x\":488.24332834500575,\"y\":448.0539214158514},{\"x\":488.24332834500575,\"y\":455.6149054478804},{\"x\":490.1359735911645,\"y\":461.2856434719022},{\"x\":492.02861883732317,\"y\":465.0661354879167},{\"x\":493.9212640834819,\"y\":472.6271195199458},{\"x\":497.7065545757993,\"y\":476.40761153596026},{\"x\":499.59919982195805,\"y\":482.0783495599821},{\"x\":501.49184506811673,\"y\":487.74908758400386},{\"x\":505.2771355604342,\"y\":497.20031762404017},{\"x\":507.1697808065929,\"y\":500.98080964005464},{\"x\":509.0624260527516,\"y\":506.6515476640764},{\"x\":510.9550712989103,\"y\":512.3222856880982},{\"x\":512.847716545069,\"y\":516.1027777041128},{\"x\":516.6330070373865,\"y\":517.99302371212},{\"x\":516.6330070373865,\"y\":523.6637617361417},{\"x\":518.5256522835451,\"y\":531.2247457681708},{\"x\":520.4182975297039,\"y\":535.0052377841854},{\"x\":522.3109427758626,\"y\":538.7857298001999},{\"x\":524.2035880220213,\"y\":542.5662218162144},{\"x\":524.2035880220213,\"y\":548.2369598402362},{\"x\":526.0962332681801,\"y\":552.0174518562507},{\"x\":527.9888785143387,\"y\":557.6881898802725},{\"x\":527.9888785143387,\"y\":561.468681896287},{\"x\":529.8815237604974,\"y\":567.1394199203088},{\"x\":531.7741690066562,\"y\":570.9199119363233},{\"x\":531.7741690066562,\"y\":574.7004039523378},{\"x\":531.7741690066562,\"y\":578.4808959683523},{\"x\":535.5594594989736,\"y\":582.2613879843668},{\"x\":535.5594594989736,\"y\":586.0418800003814},{\"x\":537.4521047451323,\"y\":591.7126180244031},{\"x\":537.4521047451323,\"y\":595.4931100404177},{\"x\":537.4521047451323,\"y\":599.2736020564322},{\"x\":539.344749991291,\"y\":604.9443400804539},{\"x\":539.344749991291,\"y\":610.6150781044757},{\"x\":539.344749991291,\"y\":614.3955701204902},{\"x\":539.344749991291,\"y\":618.1760621365048},{\"x\":541.2373952374497,\"y\":623.8468001605265},{\"x\":541.2373952374497,\"y\":627.6272921765411},{\"x\":541.2373952374497,\"y\":635.1882762085701},{\"x\":541.2373952374497,\"y\":638.9687682245847},{\"x\":541.2373952374497,\"y\":644.6395062486064},{\"x\":541.2373952374497,\"y\":648.419998264621},{\"x\":541.2373952374497,\"y\":652.2004902806354},{\"x\":541.2373952374497,\"y\":655.98098229665},{\"x\":541.2373952374497,\"y\":661.6517203206718},{\"x\":541.2373952374497,\"y\":665.4322123366862},{\"x\":541.2373952374497,\"y\":671.1029503607081},{\"x\":541.2373952374497,\"y\":680.5541804007444},{\"x\":541.2373952374497,\"y\":684.3346724167588},{\"x\":541.2373952374497,\"y\":688.1151644327734}],\"color\":\"#85C1E2\",\"closed\":false,\"isSinglePoint\":false,\"startTime\":0,\"endTime\":1,\"interpolation\":\"linear\",\"visibilityMode\":\"pop\"},{\"id\":\"path_1763675917866\",\"name\":\"Path 3\",\"points\":[{\"x\":92.68047189783452,\"y\":514.2125316961054},{\"x\":96.46576239015195,\"y\":516.1027777041128},{\"x\":100.25105288246938,\"y\":521.7735157281345},{\"x\":102.1436981286281,\"y\":525.5540077441491},{\"x\":105.92898862094552,\"y\":533.114991776178},{\"x\":107.82163386710424,\"y\":538.7857298001999},{\"x\":111.60692435942167,\"y\":542.5662218162144},{\"x\":115.3922148517391,\"y\":552.0174518562507},{\"x\":119.17750534405653,\"y\":559.5784358882797},{\"x\":121.07015059021523,\"y\":567.1394199203088},{\"x\":122.96279583637396,\"y\":574.7004039523378},{\"x\":124.85544108253266,\"y\":578.4808959683523},{\"x\":126.74808632869137,\"y\":582.2613879843668},{\"x\":128.6407315748501,\"y\":591.7126180244031},{\"x\":132.4260220671675,\"y\":597.383356048425},{\"x\":138.10395780564366,\"y\":606.8345860884613},{\"x\":141.8892482979611,\"y\":614.3955701204902},{\"x\":143.7818935441198,\"y\":623.8468001605265},{\"x\":147.56718403643723,\"y\":633.2980302005628},{\"x\":149.45982928259593,\"y\":638.9687682245847},{\"x\":151.35247452875467,\"y\":648.419998264621},{\"x\":158.92305551338953,\"y\":655.98098229665},{\"x\":162.70834600570694,\"y\":665.4322123366862},{\"x\":166.49363649802436,\"y\":672.9931963687153},{\"x\":168.3862817441831,\"y\":680.5541804007444},{\"x\":170.2789269903418,\"y\":686.2249184247662},{\"x\":172.1715722365005,\"y\":693.7859024567952},{\"x\":175.95686272881795,\"y\":701.3468864888242},{\"x\":179.74215322113537,\"y\":708.9078705208533},{\"x\":183.5274437134528,\"y\":720.2493465688968},{\"x\":185.42008895961152,\"y\":727.8103306009259},{\"x\":189.20537945192893,\"y\":733.4810686249476},{\"x\":194.88331519040509,\"y\":742.9322986649839},{\"x\":196.7759604365638,\"y\":752.3835287050202},{\"x\":200.56125092888124,\"y\":763.7250047530638},{\"x\":202.45389617503994,\"y\":769.3957427770856},{\"x\":204.34654142119865,\"y\":776.9567268091147},{\"x\":208.13183191351607,\"y\":782.6274648331364},{\"x\":210.0244771596748,\"y\":788.2982028571582},{\"x\":213.80976765199222,\"y\":795.8591868891872},{\"x\":217.59505814430966,\"y\":801.529924913209},{\"x\":219.48770339046837,\"y\":807.2006629372308},{\"x\":221.38034863662708,\"y\":812.8714009612526},{\"x\":225.1656391289445,\"y\":818.5421389852744},{\"x\":225.1656391289445,\"y\":822.3226310012889},{\"x\":227.05828437510323,\"y\":826.1031230173033},{\"x\":228.95092962126193,\"y\":833.6641070493324},{\"x\":234.62886535973809,\"y\":841.2250910813615},{\"x\":238.4141558520555,\"y\":850.6763211213978},{\"x\":242.19944634437294,\"y\":856.3470591454195},{\"x\":244.09209159053165,\"y\":860.1275511614341},{\"x\":245.98473683669036,\"y\":863.9080431774486},{\"x\":245.98473683669036,\"y\":871.4690272094776},{\"x\":251.6626725751665,\"y\":873.3592732174849},{\"x\":251.6626725751665,\"y\":879.0300112415067},{\"x\":253.55531782132522,\"y\":884.7007492655284},{\"x\":255.44796306748393,\"y\":892.2617332975575},{\"x\":259.23325355980137,\"y\":897.9324713215793},{\"x\":261.12589880596005,\"y\":903.603209345601},{\"x\":263.0185440521188,\"y\":911.1641933776301},{\"x\":264.9111892982775,\"y\":914.9446853936446},{\"x\":264.9111892982775,\"y\":918.7251774096592},{\"x\":266.8038345444362,\"y\":922.5056694256737},{\"x\":270.5891250367536,\"y\":928.1764074496955},{\"x\":272.48177028291235,\"y\":931.95689946571},{\"x\":274.3744155290711,\"y\":937.6276374897317},{\"x\":276.26706077522977,\"y\":945.1886215217608},{\"x\":278.1597060213885,\"y\":950.8593595457826},{\"x\":280.05235126754724,\"y\":956.5300975698043},{\"x\":281.9449965137059,\"y\":964.0910816018334},{\"x\":285.73028700602333,\"y\":969.7618196258552},{\"x\":285.73028700602333,\"y\":973.5423116418697},{\"x\":289.5155774983408,\"y\":975.4325576498769},{\"x\":289.5155774983408,\"y\":982.993541681906},{\"x\":291.4082227444995,\"y\":986.7740336979205},{\"x\":291.4082227444995,\"y\":990.554525713935},{\"x\":295.1935132368169,\"y\":996.2252637379568},{\"x\":295.1935132368169,\"y\":1001.8960017619786}],\"color\":\"#4ECDC4\",\"closed\":false,\"isSinglePoint\":false,\"startTime\":0,\"endTime\":1,\"interpolation\":\"linear\",\"visibilityMode\":\"pop\"},{\"id\":\"path_1763675920691\",\"name\":\"Path 4\",\"points\":[{\"x\":929.2296706999861,\"y\":164.51702021476237},{\"x\":929.2296706999861,\"y\":172.0780042467914},{\"x\":929.2296706999861,\"y\":181.52923428682772},{\"x\":934.9076064384623,\"y\":190.98046432686402},{\"x\":936.800251684621,\"y\":198.54144835889306},{\"x\":938.6928969307796,\"y\":209.8829244069366},{\"x\":942.4781874230971,\"y\":217.44390843896565},{\"x\":944.3708326692558,\"y\":226.89513847900196},{\"x\":946.2634779154146,\"y\":236.34636851903826},{\"x\":951.9414136538907,\"y\":249.57809057508908},{\"x\":955.7267041462081,\"y\":259.02932061512536},{\"x\":959.5119946385255,\"y\":270.37079666316896},{\"x\":961.4046398846842,\"y\":277.931780695198},{\"x\":963.297285130843,\"y\":285.49276472722704},{\"x\":967.0825756231604,\"y\":294.9439947672633},{\"x\":967.0825756231604,\"y\":308.17571682331413},{\"x\":970.8678661154778,\"y\":321.407438879365},{\"x\":972.7605113616365,\"y\":334.63916093541576},{\"x\":974.6531566077953,\"y\":349.76112899947384},{\"x\":976.545801853954,\"y\":361.10260504751744},{\"x\":978.4384471001126,\"y\":370.5538350875537},{\"x\":978.4384471001126,\"y\":380.00506512759},{\"x\":980.3310923462714,\"y\":387.56604915961907},{\"x\":980.3310923462714,\"y\":398.9075252076626},{\"x\":984.1163828385888,\"y\":408.3587552476989},{\"x\":984.1163828385888,\"y\":421.59047730374976},{\"x\":986.0090280847476,\"y\":434.82219935980055},{\"x\":986.0090280847476,\"y\":444.27342939983686},{\"x\":989.7943185770649,\"y\":455.6149054478804},{\"x\":991.6869638232237,\"y\":463.1758894799095},{\"x\":993.5796090693824,\"y\":472.6271195199458},{\"x\":993.5796090693824,\"y\":480.1881035519748},{\"x\":993.5796090693824,\"y\":491.52957960001834},{\"x\":993.5796090693824,\"y\":500.98080964005464},{\"x\":995.4722543155411,\"y\":510.43203968009095},{\"x\":995.4722543155411,\"y\":516.1027777041128},{\"x\":995.4722543155411,\"y\":519.8832697201273},{\"x\":995.4722543155411,\"y\":523.6637617361417},{\"x\":995.4722543155411,\"y\":531.2247457681708},{\"x\":995.4722543155411,\"y\":536.8954837921926},{\"x\":995.4722543155411,\"y\":544.4564678242216},{\"x\":995.4722543155411,\"y\":553.9076978642579},{\"x\":997.3648995616998,\"y\":561.468681896287},{\"x\":997.3648995616998,\"y\":569.029665928316},{\"x\":999.2575448078585,\"y\":574.7004039523378},{\"x\":999.2575448078585,\"y\":578.4808959683523},{\"x\":1001.1501900540172,\"y\":586.0418800003814},{\"x\":1003.042835300176,\"y\":589.8223720163959},{\"x\":1003.042835300176,\"y\":595.4931100404177},{\"x\":1004.9354805463347,\"y\":604.9443400804539},{\"x\":1004.9354805463347,\"y\":608.7248320964685},{\"x\":1008.7207710386521,\"y\":614.3955701204902},{\"x\":1008.7207710386521,\"y\":620.066308144512},{\"x\":1012.5060615309695,\"y\":627.6272921765411},{\"x\":1012.5060615309695,\"y\":635.1882762085701},{\"x\":1014.3987067771283,\"y\":642.7492602405991},{\"x\":1014.3987067771283,\"y\":650.3102442726282},{\"x\":1016.291352023287,\"y\":655.98098229665},{\"x\":1016.291352023287,\"y\":665.4322123366862},{\"x\":1018.1839972694456,\"y\":669.2127043527008},{\"x\":1018.1839972694456,\"y\":674.8834423767225},{\"x\":1020.0766425156044,\"y\":680.5541804007444},{\"x\":1020.0766425156044,\"y\":684.3346724167588},{\"x\":1020.0766425156044,\"y\":690.0054104407807},{\"x\":1021.9692877617631,\"y\":695.6761484648024},{\"x\":1021.9692877617631,\"y\":703.2371324968315},{\"x\":1023.8619330079218,\"y\":708.9078705208533},{\"x\":1027.6472235002393,\"y\":712.6883625368678},{\"x\":1027.6472235002393,\"y\":718.3591005608896},{\"x\":1027.6472235002393,\"y\":724.0298385849113},{\"x\":1027.6472235002393,\"y\":729.7005766089331},{\"x\":1027.6472235002393,\"y\":739.1518066489695},{\"x\":1027.6472235002393,\"y\":742.9322986649839}],\"color\":\"#FF6B6B\",\"closed\":false,\"isSinglePoint\":false,\"startTime\":0,\"endTime\":1,\"interpolation\":\"linear\",\"visibilityMode\":\"pop\"},{\"id\":\"path_1763675923041\",\"name\":\"Path 5\",\"points\":[{\"x\":1710.892157363535,\"y\":175.85849626280594},{\"x\":1710.892157363535,\"y\":179.63898827882045},{\"x\":1710.892157363535,\"y\":185.30972630284222},{\"x\":1708.9995121173763,\"y\":190.98046432686402},{\"x\":1708.9995121173763,\"y\":198.54144835889306},{\"x\":1705.2142216250588,\"y\":204.21218638291484},{\"x\":1703.3215763789,\"y\":215.55366243095838},{\"x\":1699.5362858865826,\"y\":228.78538448700922},{\"x\":1695.7509953942654,\"y\":242.01710654306004},{\"x\":1691.965704901948,\"y\":257.1390746071181},{\"x\":1684.395123917313,\"y\":268.48055065516166},{\"x\":1680.6098334249955,\"y\":279.8220267032052},{\"x\":1676.8245429326782,\"y\":291.1635027512488},{\"x\":1673.0392524403608,\"y\":304.3952248072996},{\"x\":1663.576026209567,\"y\":323.2976848873722},{\"x\":1657.8980904710909,\"y\":340.30989895943753},{\"x\":1648.4348642402974,\"y\":361.10260504751744},{\"x\":1638.9716380095037,\"y\":387.56604915961907},{\"x\":1637.0789927633452,\"y\":393.23678718364084},{\"x\":1633.2937022710278,\"y\":406.4685092396917},{\"x\":1629.5084117787103,\"y\":417.80998528773523},{\"x\":1627.6157665325516,\"y\":427.26121532777154},{\"x\":1625.7231212863928,\"y\":438.6026913758151},{\"x\":1623.830476040234,\"y\":453.72465943987316},{\"x\":1620.0451855479166,\"y\":465.0661354879167},{\"x\":1618.152540301758,\"y\":478.29785754396755},{\"x\":1614.3672498094406,\"y\":491.52957960001834},{\"x\":1610.5819593171232,\"y\":499.0905636320474},{\"x\":1608.6893140709644,\"y\":506.6515476640764},{\"x\":1604.904023578647,\"y\":517.99302371212},{\"x\":1604.904023578647,\"y\":525.5540077441491},{\"x\":1601.1187330863295,\"y\":533.114991776178},{\"x\":1601.1187330863295,\"y\":538.7857298001999},{\"x\":1599.2260878401707,\"y\":544.4564678242216},{\"x\":1597.3334425940122,\"y\":550.1272058482434},{\"x\":1597.3334425940122,\"y\":555.7979438722653},{\"x\":1591.655506855536,\"y\":563.3589279042942},{\"x\":1589.7628616093773,\"y\":572.8101579443305},{\"x\":1587.8702163632186,\"y\":578.4808959683523},{\"x\":1587.8702163632186,\"y\":582.2613879843668},{\"x\":1585.9775711170598,\"y\":586.0418800003814},{\"x\":1584.084925870901,\"y\":589.8223720163959},{\"x\":1582.1922806247424,\"y\":593.6028640324104},{\"x\":1580.2996353785836,\"y\":599.2736020564322},{\"x\":1578.406990132425,\"y\":608.7248320964685},{\"x\":1570.8364091477902,\"y\":616.2858161284976},{\"x\":1568.9437639016314,\"y\":625.7370461685339},{\"x\":1567.0511186554727,\"y\":629.5175381845484},{\"x\":1565.158473409314,\"y\":633.2980302005628},{\"x\":1563.2658281631552,\"y\":637.0785222165774},{\"x\":1563.2658281631552,\"y\":642.7492602405991},{\"x\":1561.3731829169965,\"y\":646.5297522566137},{\"x\":1559.480537670838,\"y\":652.2004902806354},{\"x\":1553.8026019323618,\"y\":661.6517203206718},{\"x\":1551.909956686203,\"y\":667.3224583446936},{\"x\":1548.1246661938856,\"y\":674.8834423767225},{\"x\":1546.2320209477268,\"y\":680.5541804007444},{\"x\":1544.339375701568,\"y\":688.1151644327734},{\"x\":1540.5540852092506,\"y\":693.7859024567952},{\"x\":1538.661439963092,\"y\":703.2371324968315},{\"x\":1534.8761494707746,\"y\":707.017624512846},{\"x\":1531.0908589784572,\"y\":712.6883625368678},{\"x\":1529.1982137322984,\"y\":720.2493465688968},{\"x\":1527.3055684861397,\"y\":724.0298385849113},{\"x\":1525.412923239981,\"y\":729.7005766089331},{\"x\":1523.5202779938222,\"y\":737.2615606409622},{\"x\":1521.6276327476635,\"y\":741.0420526569767},{\"x\":1521.6276327476635,\"y\":744.8225446729912},{\"x\":1519.734987501505,\"y\":748.6030366890058},{\"x\":1515.9496970091875,\"y\":756.1640207210347},{\"x\":1514.0570517630288,\"y\":759.9445127370493}],\"color\":\"#BB8FCE\",\"closed\":false,\"isSinglePoint\":false,\"startTime\":0,\"endTime\":1,\"interpolation\":\"linear\",\"visibilityMode\":\"pop\"},{\"id\":\"path_1763675925873\",\"name\":\"Path 6\",\"points\":[{\"x\":1769.5641599944552,\"y\":979.2130496658915},{\"x\":1769.5641599944552,\"y\":975.4325576498769},{\"x\":1769.5641599944552,\"y\":971.6520656338624},{\"x\":1771.456805240614,\"y\":964.0910816018334},{\"x\":1771.456805240614,\"y\":952.7496055537898},{\"x\":1773.3494504867726,\"y\":947.078867529768},{\"x\":1773.3494504867726,\"y\":939.517883497739},{\"x\":1775.2420957329314,\"y\":933.8471454737172},{\"x\":1775.2420957329314,\"y\":928.1764074496955},{\"x\":1775.2420957329314,\"y\":920.6154234176664},{\"x\":1775.2420957329314,\"y\":916.8349314016518},{\"x\":1775.2420957329314,\"y\":913.0544393856374},{\"x\":1777.1347409790899,\"y\":907.3837013616155},{\"x\":1777.1347409790899,\"y\":903.603209345601},{\"x\":1777.1347409790899,\"y\":899.8227173295866},{\"x\":1777.1347409790899,\"y\":894.1519793055647},{\"x\":1777.1347409790899,\"y\":890.3714872895503},{\"x\":1779.0273862252486,\"y\":884.7007492655284},{\"x\":1779.0273862252486,\"y\":880.920257249514},{\"x\":1779.0273862252486,\"y\":877.1397652334994},{\"x\":1779.0273862252486,\"y\":871.4690272094776},{\"x\":1779.0273862252486,\"y\":862.0177971694413},{\"x\":1779.0273862252486,\"y\":854.4568131374123},{\"x\":1779.0273862252486,\"y\":845.005583097376},{\"x\":1779.0273862252486,\"y\":837.444599065347},{\"x\":1779.0273862252486,\"y\":833.6641070493324},{\"x\":1779.0273862252486,\"y\":826.1031230173033},{\"x\":1779.0273862252486,\"y\":820.4323849932816},{\"x\":1780.9200314714074,\"y\":812.8714009612526},{\"x\":1780.9200314714074,\"y\":799.6396789052018},{\"x\":1784.7053219637248,\"y\":788.2982028571582},{\"x\":1784.7053219637248,\"y\":778.8469728171219},{\"x\":1784.7053219637248,\"y\":769.3957427770856},{\"x\":1784.7053219637248,\"y\":761.8347587450565},{\"x\":1784.7053219637248,\"y\":756.1640207210347},{\"x\":1786.5979672098836,\"y\":746.7127906809985},{\"x\":1786.5979672098836,\"y\":733.4810686249476},{\"x\":1788.4906124560423,\"y\":725.9200845929186},{\"x\":1788.4906124560423,\"y\":712.6883625368678},{\"x\":1790.383257702201,\"y\":703.2371324968315},{\"x\":1792.2759029483598,\"y\":690.0054104407807},{\"x\":1792.2759029483598,\"y\":676.7736883847299},{\"x\":1794.1685481945185,\"y\":663.541966328679},{\"x\":1794.1685481945185,\"y\":650.3102442726282},{\"x\":1794.1685481945185,\"y\":633.2980302005628},{\"x\":1796.061193440677,\"y\":620.066308144512},{\"x\":1796.061193440677,\"y\":610.6150781044757},{\"x\":1796.061193440677,\"y\":599.2736020564322},{\"x\":1796.061193440677,\"y\":591.7126180244031},{\"x\":1797.9538386868358,\"y\":582.2613879843668},{\"x\":1799.8464839329945,\"y\":572.8101579443305},{\"x\":1803.631774425312,\"y\":563.3589279042942},{\"x\":1803.631774425312,\"y\":555.7979438722653},{\"x\":1805.5244196714707,\"y\":552.0174518562507},{\"x\":1805.5244196714707,\"y\":548.2369598402362},{\"x\":1805.5244196714707,\"y\":540.6759758082071},{\"x\":1807.4170649176294,\"y\":535.0052377841854},{\"x\":1809.3097101637882,\"y\":523.6637617361417},{\"x\":1811.202355409947,\"y\":516.1027777041128},{\"x\":1813.0950006561056,\"y\":510.43203968009095},{\"x\":1813.0950006561056,\"y\":504.7613016560692},{\"x\":1813.0950006561056,\"y\":499.0905636320474},{\"x\":1816.8802911484229,\"y\":493.41982560802563},{\"x\":1816.8802911484229,\"y\":483.9685955679893},{\"x\":1818.7729363945816,\"y\":476.40761153596026},{\"x\":1822.558226886899,\"y\":466.956381495924},{\"x\":1824.4508721330578,\"y\":461.2856434719022},{\"x\":1824.4508721330578,\"y\":455.6149054478804},{\"x\":1826.3435173792166,\"y\":449.94416742385863},{\"x\":1826.3435173792166,\"y\":442.3831833918296},{\"x\":1828.2361626253753,\"y\":436.71244536780785},{\"x\":1828.2361626253753,\"y\":427.26121532777154},{\"x\":1830.128807871534,\"y\":419.70023129574247},{\"x\":1830.128807871534,\"y\":412.13924726371346},{\"x\":1832.0214531176928,\"y\":408.3587552476989},{\"x\":1832.0214531176928,\"y\":404.5782632316844},{\"x\":1833.9140983638515,\"y\":397.0172791996554},{\"x\":1833.9140983638515,\"y\":389.4562951676263},{\"x\":1835.80674361001,\"y\":380.00506512759},{\"x\":1837.6993888561688,\"y\":368.66358907954645},{\"x\":1837.6993888561688,\"y\":359.21235903951015},{\"x\":1841.4846793484862,\"y\":349.76112899947384},{\"x\":1841.4846793484862,\"y\":342.2001449674448},{\"x\":1841.4846793484862,\"y\":334.63916093541576}],\"color\":\"#45B7D1\",\"closed\":false,\"isSinglePoint\":false,\"startTime\":0,\"endTime\":1,\"interpolation\":\"linear\",\"visibilityMode\":\"pop\"},{\"id\":\"path_1763675929695\",\"name\":\"Path 7\",\"points\":[{\"x\":2140.522628241563,\"y\":289.2732567432415},{\"x\":2136.737337749246,\"y\":296.8342407752706},{\"x\":2136.737337749246,\"y\":304.3952248072996},{\"x\":2134.844692503087,\"y\":311.95620883932867},{\"x\":2132.9520472569284,\"y\":317.62694686335044},{\"x\":2129.166756764611,\"y\":328.968422911394},{\"x\":2125.3814662722934,\"y\":340.30989895943753},{\"x\":2119.7035305338172,\"y\":351.65137500748114},{\"x\":2115.9182400414998,\"y\":362.9928510555247},{\"x\":2114.025594795341,\"y\":372.444081095561},{\"x\":2110.2403043030235,\"y\":383.78555714360454},{\"x\":2106.455013810706,\"y\":393.23678718364084},{\"x\":2102.6697233183886,\"y\":402.68801722367715},{\"x\":2100.77707807223,\"y\":412.13924726371346},{\"x\":2098.884432826071,\"y\":423.480723311757},{\"x\":2096.991787579913,\"y\":434.82219935980055},{\"x\":2093.2064970875954,\"y\":444.27342939983686},{\"x\":2091.3138518414366,\"y\":457.5051514558877},{\"x\":2089.421206595278,\"y\":468.84662750393124},{\"x\":2083.7432708568017,\"y\":483.9685955679893},{\"x\":2081.850625610643,\"y\":495.3100716160329},{\"x\":2079.9579803644842,\"y\":506.6515476640764},{\"x\":2078.0653351183255,\"y\":516.1027777041128},{\"x\":2076.1726898721668,\"y\":523.6637617361417},{\"x\":2074.280044626008,\"y\":535.0052377841854},{\"x\":2074.280044626008,\"y\":542.5662218162144},{\"x\":2072.3873993798493,\"y\":552.0174518562507},{\"x\":2070.4947541336905,\"y\":557.6881898802725},{\"x\":2068.602108887532,\"y\":567.1394199203088},{\"x\":2068.602108887532,\"y\":572.8101579443305},{\"x\":2064.8168183952143,\"y\":576.5906499603451},{\"x\":2064.8168183952143,\"y\":582.2613879843668},{\"x\":2062.9241731490556,\"y\":589.8223720163959},{\"x\":2062.9241731490556,\"y\":595.4931100404177},{\"x\":2059.1388826567386,\"y\":604.9443400804539},{\"x\":2059.1388826567386,\"y\":608.7248320964685},{\"x\":2057.24623741058,\"y\":616.2858161284976},{\"x\":2055.353592164421,\"y\":625.7370461685339},{\"x\":2053.4609469182624,\"y\":629.5175381845484},{\"x\":2051.5683016721036,\"y\":635.1882762085701},{\"x\":2049.675656425945,\"y\":642.7492602405991},{\"x\":2049.675656425945,\"y\":648.419998264621},{\"x\":2045.8903659336274,\"y\":652.2004902806354},{\"x\":2043.9977206874687,\"y\":663.541966328679},{\"x\":2043.9977206874687,\"y\":671.1029503607081},{\"x\":2042.10507544131,\"y\":676.7736883847299},{\"x\":2040.2124301951512,\"y\":686.2249184247662},{\"x\":2040.2124301951512,\"y\":691.8956564487879},{\"x\":2038.3197849489925,\"y\":699.456640480817},{\"x\":2038.3197849489925,\"y\":705.1273785048387},{\"x\":2036.4271397028338,\"y\":710.7981165288605},{\"x\":2036.4271397028338,\"y\":718.3591005608896},{\"x\":2036.4271397028338,\"y\":724.0298385849113},{\"x\":2034.534494456675,\"y\":727.8103306009259},{\"x\":2032.6418492105163,\"y\":733.4810686249476},{\"x\":2032.6418492105163,\"y\":741.0420526569767},{\"x\":2030.7492039643575,\"y\":746.7127906809985},{\"x\":2026.9639134720403,\"y\":752.3835287050202},{\"x\":2026.9639134720403,\"y\":761.8347587450565},{\"x\":2023.1786229797228,\"y\":769.3957427770856},{\"x\":2023.1786229797228,\"y\":776.9567268091147},{\"x\":2021.285977733564,\"y\":782.6274648331364},{\"x\":2019.3933324874054,\"y\":790.1884488651655},{\"x\":2017.5006872412466,\"y\":799.6396789052018},{\"x\":2015.608041995088,\"y\":807.2006629372308},{\"x\":2013.7153967489292,\"y\":814.7616469692598},{\"x\":2013.7153967489292,\"y\":822.3226310012889},{\"x\":2011.8227515027704,\"y\":831.7738610413252},{\"x\":2004.2521705181357,\"y\":841.2250910813615},{\"x\":2002.359525271977,\"y\":846.8958291053832},{\"x\":2002.359525271977,\"y\":858.2373051534269},{\"x\":2000.4668800258182,\"y\":863.9080431774486},{\"x\":1998.5742347796595,\"y\":869.5787812014704},{\"x\":1998.5742347796595,\"y\":873.3592732174849},{\"x\":1996.6815895335008,\"y\":879.0300112415067},{\"x\":1994.788944287342,\"y\":888.481241281543},{\"x\":1992.8962990411833,\"y\":894.1519793055647},{\"x\":1989.111008548866,\"y\":901.7129633375938},{\"x\":1987.2183633027073,\"y\":909.2739473696229},{\"x\":1985.3257180565486,\"y\":913.0544393856374},{\"x\":1985.3257180565486,\"y\":916.8349314016518}],\"color\":\"#BB8FCE\",\"closed\":false,\"isSinglePoint\":false,\"startTime\":0,\"endTime\":1,\"interpolation\":\"linear\",\"visibilityMode\":\"pop\"},{\"id\":\"path_1763675932325\",\"name\":\"Path 8\",\"points\":[{\"x\":2284.3636669496254,\"y\":1274.091426915024},{\"x\":2284.3636669496254,\"y\":1268.4206888910023},{\"x\":2284.3636669496254,\"y\":1262.7499508669805},{\"x\":2284.3636669496254,\"y\":1257.0792128429587},{\"x\":2284.3636669496254,\"y\":1251.4084748189368},{\"x\":2284.3636669496254,\"y\":1241.9572447789005},{\"x\":2284.3636669496254,\"y\":1234.3962607468716},{\"x\":2284.3636669496254,\"y\":1228.7255227228497},{\"x\":2284.3636669496254,\"y\":1217.3840466748063},{\"x\":2286.256312195784,\"y\":1206.0425706267627},{\"x\":2286.256312195784,\"y\":1194.701094578719},{\"x\":2290.0416026881016,\"y\":1183.3596185306756},{\"x\":2295.7195384265774,\"y\":1172.018142482632},{\"x\":2297.612183672736,\"y\":1160.6766664345885},{\"x\":2299.504828918895,\"y\":1149.3351903865448},{\"x\":2301.3974741650536,\"y\":1141.7742063545159},{\"x\":2303.2901194112123,\"y\":1130.4327303064722},{\"x\":2307.07540990353,\"y\":1122.8717462744432},{\"x\":2310.8607003958473,\"y\":1109.6400242183925},{\"x\":2316.5386361343235,\"y\":1100.1887941783561},{\"x\":2320.323926626641,\"y\":1086.9570721223054},{\"x\":2324.1092171189584,\"y\":1071.8351040582472},{\"x\":2329.7871528574346,\"y\":1054.822889986182},{\"x\":2335.4650885959104,\"y\":1035.9204299061093},{\"x\":2341.1430243343866,\"y\":1017.0179698260366},{\"x\":2346.820960072863,\"y\":998.115509745964},{\"x\":2352.498895811339,\"y\":979.2130496658915},{\"x\":2356.2841863036565,\"y\":965.9813276098406},{\"x\":2360.069476795974,\"y\":947.078867529768},{\"x\":2363.8547672882914,\"y\":928.1764074496955},{\"x\":2367.640057780609,\"y\":911.1641933776301},{\"x\":2373.3179935190847,\"y\":894.1519793055647},{\"x\":2373.3179935190847,\"y\":882.8105032575212},{\"x\":2375.2106387652434,\"y\":873.3592732174849},{\"x\":2377.103284011402,\"y\":863.9080431774486},{\"x\":2378.995929257561,\"y\":852.566567129405},{\"x\":2380.8885745037196,\"y\":839.3348450733542},{\"x\":2384.673864996037,\"y\":826.1031230173033},{\"x\":2386.566510242196,\"y\":816.651892977267},{\"x\":2390.3518007345133,\"y\":809.0909089452381},{\"x\":2392.244445980672,\"y\":803.4201709212163},{\"x\":2394.1370912268308,\"y\":795.8591868891872},{\"x\":2394.1370912268308,\"y\":784.5177108411436},{\"x\":2397.9223817191482,\"y\":775.0664808011073},{\"x\":2399.815026965307,\"y\":763.7250047530638},{\"x\":2401.7076722114657,\"y\":752.3835287050202},{\"x\":2405.492962703783,\"y\":744.8225446729912},{\"x\":2409.2782531961006,\"y\":737.2615606409622},{\"x\":2409.2782531961006,\"y\":729.7005766089331},{\"x\":2411.1708984422594,\"y\":722.1395925769041},{\"x\":2414.9561889345764,\"y\":712.6883625368678},{\"x\":2416.848834180735,\"y\":703.2371324968315},{\"x\":2418.741479426894,\"y\":691.8956564487879},{\"x\":2420.6341246730526,\"y\":684.3346724167588},{\"x\":2422.5267699192113,\"y\":676.7736883847299},{\"x\":2422.5267699192113,\"y\":672.9931963687153},{\"x\":2424.41941516537,\"y\":669.2127043527008},{\"x\":2424.41941516537,\"y\":665.4322123366862},{\"x\":2424.41941516537,\"y\":661.6517203206718}],\"color\":\"#F7DC6F\",\"closed\":false,\"isSinglePoint\":false,\"startTime\":0,\"endTime\":1,\"interpolation\":\"linear\",\"visibilityMode\":\"pop\"},{\"id\":\"path_1763675935589\",\"name\":\"Path 9\",\"points\":[{\"x\":2513.3737417348298,\"y\":412.13924726371346},{\"x\":2511.481096488671,\"y\":417.80998528773523},{\"x\":2507.6958059963536,\"y\":419.70023129574247},{\"x\":2503.910515504036,\"y\":425.37096931976424},{\"x\":2498.23257976556,\"y\":429.1514613357788},{\"x\":2494.4472892732424,\"y\":436.71244536780785},{\"x\":2492.5546440270837,\"y\":442.3831833918296},{\"x\":2488.7693535347667,\"y\":446.1636754078441},{\"x\":2484.984063042449,\"y\":453.72465943987316},{\"x\":2481.1987725501317,\"y\":459.39539746389494},{\"x\":2477.4134820578142,\"y\":465.0661354879167},{\"x\":2473.6281915654968,\"y\":474.517365527953},{\"x\":2467.9502558270206,\"y\":483.9685955679893},{\"x\":2462.2723200885443,\"y\":491.52957960001834},{\"x\":2458.487029596227,\"y\":500.98080964005464},{\"x\":2452.8090938577507,\"y\":512.3222856880982},{\"x\":2449.0238033654337,\"y\":519.8832697201273},{\"x\":2443.3458676269574,\"y\":529.3344997601636},{\"x\":2439.56057713464,\"y\":536.8954837921926},{\"x\":2437.6679318884812,\"y\":542.5662218162144},{\"x\":2433.8826413961638,\"y\":550.1272058482434},{\"x\":2431.989996150005,\"y\":553.9076978642579},{\"x\":2430.0973509038463,\"y\":559.5784358882797},{\"x\":2424.41941516537,\"y\":563.3589279042942},{\"x\":2422.5267699192113,\"y\":569.029665928316},{\"x\":2420.6341246730526,\"y\":572.8101579443305},{\"x\":2418.741479426894,\"y\":576.5906499603451},{\"x\":2414.9561889345764,\"y\":582.2613879843668},{\"x\":2413.0635436884177,\"y\":587.9321260083887},{\"x\":2411.1708984422594,\"y\":593.6028640324104},{\"x\":2405.492962703783,\"y\":599.2736020564322},{\"x\":2403.6003174576244,\"y\":604.9443400804539},{\"x\":2399.815026965307,\"y\":610.6150781044757},{\"x\":2397.9223817191482,\"y\":614.3955701204902},{\"x\":2396.0297364729895,\"y\":618.1760621365048},{\"x\":2392.244445980672,\"y\":625.7370461685339},{\"x\":2386.566510242196,\"y\":629.5175381845484},{\"x\":2384.673864996037,\"y\":633.2980302005628},{\"x\":2380.8885745037196,\"y\":637.0785222165774},{\"x\":2378.995929257561,\"y\":642.7492602405991},{\"x\":2375.2106387652434,\"y\":646.5297522566137},{\"x\":2373.3179935190847,\"y\":650.3102442726282},{\"x\":2367.640057780609,\"y\":654.0907362886427},{\"x\":2363.8547672882914,\"y\":661.6517203206718},{\"x\":2360.069476795974,\"y\":667.3224583446936},{\"x\":2356.2841863036565,\"y\":671.1029503607081},{\"x\":2354.3915410574978,\"y\":674.8834423767225},{\"x\":2348.7136053190216,\"y\":680.5541804007444},{\"x\":2344.928314826704,\"y\":686.2249184247662},{\"x\":2343.0356695805453,\"y\":690.0054104407807},{\"x\":2341.1430243343866,\"y\":693.7859024567952},{\"x\":2337.357733842069,\"y\":695.6761484648024},{\"x\":2337.357733842069,\"y\":699.456640480817},{\"x\":2335.4650885959104,\"y\":703.2371324968315},{\"x\":2327.894507611276,\"y\":708.9078705208533},{\"x\":2326.001862365117,\"y\":712.6883625368678},{\"x\":2320.323926626641,\"y\":720.2493465688968},{\"x\":2318.4312813804822,\"y\":724.0298385849113},{\"x\":2316.5386361343235,\"y\":727.8103306009259}],\"color\":\"#F7DC6F\",\"closed\":false,\"isSinglePoint\":false,\"startTime\":0,\"endTime\":1,\"interpolation\":\"linear\",\"visibilityMode\":\"pop\"},{\"id\":\"path_1763675938183\",\"name\":\"Path 10\",\"points\":[{\"x\":2418.741479426894,\"y\":304.3952248072996},{\"x\":2422.5267699192113,\"y\":294.9439947672633},{\"x\":2424.41941516537,\"y\":289.2732567432415},{\"x\":2428.2047056576876,\"y\":277.931780695198},{\"x\":2430.0973509038463,\"y\":270.37079666316896},{\"x\":2431.989996150005,\"y\":260.91956662313265},{\"x\":2431.989996150005,\"y\":251.46833658309635},{\"x\":2433.8826413961638,\"y\":240.12686053505277},{\"x\":2433.8826413961638,\"y\":226.89513847900196},{\"x\":2433.8826413961638,\"y\":213.66341642295114},{\"x\":2435.7752866423225,\"y\":200.4316943669003},{\"x\":2435.7752866423225,\"y\":190.98046432686402},{\"x\":2437.6679318884812,\"y\":183.41948029483498},{\"x\":2437.6679318884812,\"y\":179.63898827882045},{\"x\":2437.6679318884812,\"y\":173.96825025479868},{\"x\":2439.56057713464,\"y\":170.18775823878414},{\"x\":2439.56057713464,\"y\":162.6267742067551},{\"x\":2441.4532223807987,\"y\":155.06579017472606},{\"x\":2441.4532223807987,\"y\":145.61456013468978},{\"x\":2441.4532223807987,\"y\":141.83406811867525},{\"x\":2443.3458676269574,\"y\":138.05357610266074},{\"x\":2443.3458676269574,\"y\":134.2730840866462},{\"x\":2443.3458676269574,\"y\":128.60234606262443},{\"x\":2447.131158119275,\"y\":121.0413620305954},{\"x\":2449.0238033654337,\"y\":109.69988598255183},{\"x\":2450.916448611592,\"y\":98.35840993450827},{\"x\":2452.8090938577507,\"y\":87.01693388646471},{\"x\":2452.8090938577507,\"y\":79.45594985443567},{\"x\":2454.7017391039094,\"y\":68.11447380639211},{\"x\":2456.594384350068,\"y\":60.553489774363065},{\"x\":2458.487029596227,\"y\":51.102259734326765},{\"x\":2460.3796748423856,\"y\":37.870537678275944},{\"x\":2462.2723200885443,\"y\":32.199799654254164},{\"x\":2462.2723200885443,\"y\":24.638815622225128},{\"x\":2467.9502558270206,\"y\":18.968077598203347},{\"x\":2467.9502558270206,\"y\":11.407093566174305},{\"x\":2469.8429010731793,\"y\":7.626601550159785},{\"x\":2469.8429010731793,\"y\":3.846109534145265}],\"color\":\"#FF6B6B\",\"closed\":false,\"isSinglePoint\":false,\"startTime\":0,\"endTime\":1,\"interpolation\":\"linear\",\"visibilityMode\":\"pop\"},{\"id\":\"path_1763675940137\",\"name\":\"Path 11\",\"points\":[{\"x\":1922.868424933311,\"y\":291.1635027512488},{\"x\":1924.7610701794697,\"y\":287.3830107352343},{\"x\":1926.6537154256284,\"y\":279.8220267032052},{\"x\":1928.5463606717872,\"y\":272.2610426711762},{\"x\":1932.3316511641044,\"y\":264.70005863914713},{\"x\":1936.116941656422,\"y\":255.24882859911085},{\"x\":1938.0095869025806,\"y\":247.6878445670818},{\"x\":1939.9022321487394,\"y\":238.2366145270455},{\"x\":1941.794877394898,\"y\":228.78538448700922},{\"x\":1943.6875226410568,\"y\":217.44390843896565},{\"x\":1945.5801678872156,\"y\":207.99267839892934},{\"x\":1947.4728131333743,\"y\":198.54144835889306},{\"x\":1949.365458379533,\"y\":190.98046432686402},{\"x\":1951.2581036256918,\"y\":181.52923428682772},{\"x\":1956.9360393641678,\"y\":173.96825025479868},{\"x\":1958.8286846103265,\"y\":162.6267742067551},{\"x\":1960.7213298564852,\"y\":155.06579017472606},{\"x\":1964.5066203488027,\"y\":145.61456013468978},{\"x\":1966.3992655949614,\"y\":138.05357610266074},{\"x\":1970.184556087279,\"y\":128.60234606262443},{\"x\":1973.9698465795962,\"y\":121.0413620305954},{\"x\":1975.862491825755,\"y\":117.26087001458087},{\"x\":1977.7551370719136,\"y\":107.80963997454457},{\"x\":1979.6477823180724,\"y\":100.24865594251553},{\"x\":1983.4330728103898,\"y\":90.79742590247923},{\"x\":1987.2183633027073,\"y\":83.2364418704502},{\"x\":1989.111008548866,\"y\":75.67545783842115},{\"x\":1992.8962990411833,\"y\":66.22422779838485},{\"x\":1994.788944287342,\"y\":58.663243766355805},{\"x\":1996.6815895335008,\"y\":49.212013726319505},{\"x\":1998.5742347796595,\"y\":43.541275702297725},{\"x\":2002.359525271977,\"y\":34.090045662261424},{\"x\":2004.2521705181357,\"y\":30.309553646246908},{\"x\":2004.2521705181357,\"y\":26.529061630232388},{\"x\":2006.1448157642944,\"y\":22.748569614217867},{\"x\":2008.0374610104532,\"y\":18.968077598203347},{\"x\":2013.7153967489292,\"y\":11.407093566174305},{\"x\":2015.608041995088,\"y\":3.846109534145265}],\"color\":\"#FF6B6B\",\"closed\":false,\"isSinglePoint\":false,\"startTime\":0,\"endTime\":1,\"interpolation\":\"linear\",\"visibilityMode\":\"pop\"},{\"id\":\"path_1763675941920\",\"name\":\"Path 12\",\"points\":[{\"x\":1587.8702163632186,\"y\":151.28529815871156},{\"x\":1589.7628616093773,\"y\":147.50480614269702},{\"x\":1591.655506855536,\"y\":139.94382211066798},{\"x\":1597.3334425940122,\"y\":132.38283807863894},{\"x\":1601.1187330863295,\"y\":124.82185404660991},{\"x\":1603.0113783324882,\"y\":119.15111602258813},{\"x\":1606.7966688248057,\"y\":107.80963997454457},{\"x\":1610.5819593171232,\"y\":100.24865594251553},{\"x\":1616.2598950555994,\"y\":85.12668787845745},{\"x\":1621.9378307940754,\"y\":68.11447380639211},{\"x\":1627.6157665325516,\"y\":56.772997758348545},{\"x\":1629.5084117787103,\"y\":47.321767718312245},{\"x\":1633.2937022710278,\"y\":43.541275702297725},{\"x\":1635.1863475171865,\"y\":39.760783686283204},{\"x\":1635.1863475171865,\"y\":34.090045662261424},{\"x\":1637.0789927633452,\"y\":30.309553646246908},{\"x\":1638.9716380095037,\"y\":24.638815622225128},{\"x\":1640.8642832556625,\"y\":18.968077598203347},{\"x\":1642.7569285018212,\"y\":15.187585582188825},{\"x\":1642.7569285018212,\"y\":9.516847558167045},{\"x\":1644.64957374798,\"y\":5.736355542152525},{\"x\":1646.5422189941387,\"y\":1.9558635261380053},{\"x\":1646.5422189941387,\"y\":-3.714874497883775}],\"color\":\"#4ECDC4\",\"closed\":false,\"isSinglePoint\":false,\"startTime\":0,\"endTime\":1,\"interpolation\":\"linear\",\"visibilityMode\":\"pop\"},{\"id\":\"path_1763675943378\",\"name\":\"Path 13\",\"points\":[{\"x\":1088.2118713773182,\"y\":179.63898827882045},{\"x\":1088.2118713773182,\"y\":172.0780042467914},{\"x\":1088.2118713773182,\"y\":162.6267742067551},{\"x\":1088.2118713773182,\"y\":155.06579017472606},{\"x\":1086.3192261311594,\"y\":143.72431412668251},{\"x\":1086.3192261311594,\"y\":136.16333009465347},{\"x\":1086.3192261311594,\"y\":124.82185404660991},{\"x\":1086.3192261311594,\"y\":115.3706240065736},{\"x\":1084.4265808850007,\"y\":105.91939396653731},{\"x\":1084.4265808850007,\"y\":100.24865594251553},{\"x\":1084.4265808850007,\"y\":96.468163926501},{\"x\":1084.4265808850007,\"y\":88.90717989447197},{\"x\":1084.4265808850007,\"y\":85.12668787845745},{\"x\":1084.4265808850007,\"y\":77.5657038464284},{\"x\":1080.6412903926832,\"y\":68.11447380639211},{\"x\":1080.6412903926832,\"y\":60.553489774363065},{\"x\":1080.6412903926832,\"y\":49.212013726319505},{\"x\":1080.6412903926832,\"y\":41.651029694290465},{\"x\":1080.6412903926832,\"y\":32.199799654254164},{\"x\":1080.6412903926832,\"y\":26.529061630232388},{\"x\":1080.6412903926832,\"y\":20.858323606210607},{\"x\":1080.6412903926832,\"y\":13.297339574181565},{\"x\":1078.7486451465245,\"y\":9.516847558167045}],\"color\":\"#FF6B6B\",\"closed\":false,\"isSinglePoint\":false,\"startTime\":0,\"endTime\":1,\"interpolation\":\"linear\",\"visibilityMode\":\"pop\"},{\"id\":\"path_1763675944880\",\"name\":\"Path 14\",\"points\":[{\"x\":700.2195959147817,\"y\":323.2976848873722},{\"x\":700.2195959147817,\"y\":317.62694686335044},{\"x\":698.326950668623,\"y\":310.0659628313214},{\"x\":696.4343054224643,\"y\":302.50497879929236},{\"x\":696.4343054224643,\"y\":291.1635027512488},{\"x\":694.5416601763055,\"y\":277.931780695198},{\"x\":690.7563696839882,\"y\":266.5903046471544},{\"x\":688.8637244378294,\"y\":253.35858259110358},{\"x\":688.8637244378294,\"y\":240.12686053505277},{\"x\":686.9710791916707,\"y\":230.67563049501646},{\"x\":686.9710791916707,\"y\":219.33415444697292},{\"x\":683.1857886993533,\"y\":211.77317041494388},{\"x\":681.2931434531946,\"y\":202.32194037490757},{\"x\":681.2931434531946,\"y\":194.76095634287853},{\"x\":679.4004982070359,\"y\":183.41948029483498},{\"x\":679.4004982070359,\"y\":175.85849626280594},{\"x\":677.5078529608771,\"y\":164.51702021476237},{\"x\":677.5078529608771,\"y\":156.95603618273333},{\"x\":677.5078529608771,\"y\":147.50480614269702},{\"x\":677.5078529608771,\"y\":141.83406811867525},{\"x\":677.5078529608771,\"y\":132.38283807863894},{\"x\":675.6152077147184,\"y\":119.15111602258813},{\"x\":675.6152077147184,\"y\":105.91939396653731},{\"x\":675.6152077147184,\"y\":96.468163926501},{\"x\":673.7225624685598,\"y\":85.12668787845745},{\"x\":673.7225624685598,\"y\":77.5657038464284},{\"x\":673.7225624685598,\"y\":68.11447380639211},{\"x\":673.7225624685598,\"y\":62.443735782370325},{\"x\":673.7225624685598,\"y\":51.102259734326765},{\"x\":671.829917222401,\"y\":41.651029694290465},{\"x\":671.829917222401,\"y\":30.309553646246908},{\"x\":669.9372719762423,\"y\":20.858323606210607},{\"x\":668.0446267300836,\"y\":13.297339574181565},{\"x\":668.0446267300836,\"y\":7.626601550159785},{\"x\":668.0446267300836,\"y\":3.846109534145265}],\"color\":\"#98D8C8\",\"closed\":false,\"isSinglePoint\":false,\"startTime\":0,\"endTime\":1,\"interpolation\":\"linear\",\"visibilityMode\":\"pop\"},{\"id\":\"path_1763675946623\",\"name\":\"Path 15\",\"points\":[{\"x\":389.8257755447526,\"y\":151.28529815871156},{\"x\":391.71842079091135,\"y\":147.50480614269702},{\"x\":391.71842079091135,\"y\":139.94382211066798},{\"x\":391.71842079091135,\"y\":134.2730840866462},{\"x\":387.9331302985939,\"y\":124.82185404660991},{\"x\":386.0404850524352,\"y\":115.3706240065736},{\"x\":384.14783980627647,\"y\":105.91939396653731},{\"x\":380.36254931395905,\"y\":98.35840993450827},{\"x\":378.4699040678003,\"y\":88.90717989447197},{\"x\":378.4699040678003,\"y\":79.45594985443567},{\"x\":376.57725882164164,\"y\":68.11447380639211},{\"x\":374.6846135754829,\"y\":60.553489774363065},{\"x\":370.8993230831655,\"y\":47.321767718312245},{\"x\":369.00667783700675,\"y\":39.760783686283204},{\"x\":367.11403259084807,\"y\":28.419307638239648},{\"x\":365.22138734468933,\"y\":20.858323606210607},{\"x\":361.4360968523719,\"y\":9.516847558167045},{\"x\":359.5434516062132,\"y\":0.06561751813074519}],\"color\":\"#F7DC6F\",\"closed\":false,\"isSinglePoint\":false,\"startTime\":0,\"endTime\":1,\"interpolation\":\"linear\",\"visibilityMode\":\"pop\"},{\"id\":\"path_1763675948129\",\"name\":\"Path 16\",\"points\":[{\"x\":261.12589880596005,\"y\":442.3831833918296},{\"x\":261.12589880596005,\"y\":434.82219935980055},{\"x\":261.12589880596005,\"y\":427.26121532777154},{\"x\":259.23325355980137,\"y\":421.59047730374976},{\"x\":255.44796306748393,\"y\":410.24900125570616},{\"x\":253.55531782132522,\"y\":400.79777121566985},{\"x\":251.6626725751665,\"y\":389.4562951676263},{\"x\":245.98473683669036,\"y\":380.00506512759},{\"x\":244.09209159053165,\"y\":366.7733430715392},{\"x\":240.3068010982142,\"y\":353.5416210154884},{\"x\":238.4141558520555,\"y\":344.09039097545207},{\"x\":236.5215106058968,\"y\":330.8586689194013},{\"x\":234.62886535973809,\"y\":321.407438879365},{\"x\":232.73622011357935,\"y\":310.0659628313214},{\"x\":228.95092962126193,\"y\":296.8342407752706},{\"x\":227.05828437510323,\"y\":285.49276472722704},{\"x\":225.1656391289445,\"y\":270.37079666316896},{\"x\":221.38034863662708,\"y\":257.1390746071181},{\"x\":219.48770339046837,\"y\":240.12686053505277},{\"x\":215.70241289815093,\"y\":226.89513847900196},{\"x\":213.80976765199222,\"y\":213.66341642295114},{\"x\":210.0244771596748,\"y\":198.54144835889306},{\"x\":206.23918666735736,\"y\":189.09021831885676},{\"x\":202.45389617503994,\"y\":173.96825025479868},{\"x\":198.6686056827225,\"y\":160.73652819874786},{\"x\":196.7759604365638,\"y\":145.61456013468978},{\"x\":194.88331519040509,\"y\":134.2730840866462},{\"x\":191.09802469808764,\"y\":121.0413620305954},{\"x\":187.31273420577023,\"y\":105.91939396653731},{\"x\":185.42008895961152,\"y\":94.57791791849375},{\"x\":181.63479846729408,\"y\":77.5657038464284},{\"x\":177.84950797497666,\"y\":64.33398179037759},{\"x\":175.95686272881795,\"y\":49.212013726319505},{\"x\":172.1715722365005,\"y\":39.760783686283204},{\"x\":170.2789269903418,\"y\":28.419307638239648},{\"x\":168.3862817441831,\"y\":18.968077598203347},{\"x\":168.3862817441831,\"y\":9.516847558167045},{\"x\":166.49363649802436,\"y\":0.06561751813074519}],\"color\":\"#BB8FCE\",\"closed\":false,\"isSinglePoint\":false,\"startTime\":0,\"endTime\":1,\"interpolation\":\"linear\",\"visibilityMode\":\"pop\"},{\"id\":\"path_1763675956765\",\"name\":\"Path 17\",\"points\":[{\"x\":1491.3453088091242,\"y\":1298.6646250191184},{\"x\":1495.1305993014416,\"y\":1298.6646250191184},{\"x\":1500.8085350399178,\"y\":1298.6646250191184},{\"x\":1506.4864707783938,\"y\":1294.884133003104},{\"x\":1512.16440651687,\"y\":1292.9938869950965},{\"x\":1521.6276327476635,\"y\":1291.1036409870894},{\"x\":1531.0908589784572,\"y\":1285.4329029630676},{\"x\":1544.339375701568,\"y\":1279.7621649390458},{\"x\":1559.480537670838,\"y\":1275.9816729230313},{\"x\":1572.729054393949,\"y\":1270.3109348990095},{\"x\":1587.8702163632186,\"y\":1266.530442882995},{\"x\":1601.1187330863295,\"y\":1260.8597048589731},{\"x\":1608.6893140709644,\"y\":1258.969458850966},{\"x\":1620.0451855479166,\"y\":1255.1889668349513},{\"x\":1627.6157665325516,\"y\":1251.4084748189368},{\"x\":1637.0789927633452,\"y\":1249.5182288109297},{\"x\":1642.7569285018212,\"y\":1243.8474907869079},{\"x\":1652.220154732615,\"y\":1243.8474907869079},{\"x\":1659.7907357172496,\"y\":1241.9572447789005},{\"x\":1665.4686714557258,\"y\":1240.0669987708934},{\"x\":1673.0392524403608,\"y\":1236.286506754879},{\"x\":1680.6098334249955,\"y\":1234.3962607468716},{\"x\":1690.0730596557892,\"y\":1232.5060147388642},{\"x\":1697.6436406404239,\"y\":1230.615768730857},{\"x\":1705.2142216250588,\"y\":1230.615768730857},{\"x\":1716.5700931020112,\"y\":1224.9450307068353},{\"x\":1727.9259645789634,\"y\":1223.054784698828},{\"x\":1735.4965455635984,\"y\":1221.1645386908208},{\"x\":1746.8524170405506,\"y\":1217.3840466748063},{\"x\":1756.315643271344,\"y\":1215.493800666799},{\"x\":1765.7788695021377,\"y\":1213.6035546587916},{\"x\":1777.1347409790899,\"y\":1209.8230626427771},{\"x\":1790.383257702201,\"y\":1204.1523246187553},{\"x\":1797.9538386868358,\"y\":1202.2620786107482},{\"x\":1805.5244196714707,\"y\":1200.3718326027408},{\"x\":1809.3097101637882,\"y\":1198.4815865947337},{\"x\":1813.0950006561056,\"y\":1196.5913405867263},{\"x\":1818.7729363945816,\"y\":1196.5913405867263},{\"x\":1828.2361626253753,\"y\":1192.8108485707119},{\"x\":1833.9140983638515,\"y\":1190.9206025627045},{\"x\":1841.4846793484862,\"y\":1187.14011054669},{\"x\":1847.1626150869624,\"y\":1185.249864538683},{\"x\":1852.8405508254386,\"y\":1183.3596185306756},{\"x\":1860.4111318100734,\"y\":1181.4693725226682},{\"x\":1866.0890675485496,\"y\":1179.579126514661},{\"x\":1871.7670032870258,\"y\":1177.6888805066537},{\"x\":1879.3375842716605,\"y\":1175.7986344986466},{\"x\":1886.9081652562954,\"y\":1172.018142482632},{\"x\":1898.2640367332476,\"y\":1168.2376504666174},{\"x\":1903.9419724717238,\"y\":1166.3474044586103},{\"x\":1907.7272629640413,\"y\":1164.457158450603},{\"x\":1913.4051987025173,\"y\":1164.457158450603},{\"x\":1919.0831344409935,\"y\":1164.457158450603},{\"x\":1924.7610701794697,\"y\":1162.5669124425956},{\"x\":1930.439005917946,\"y\":1160.6766664345885},{\"x\":1938.0095869025806,\"y\":1158.7864204265811},{\"x\":1941.794877394898,\"y\":1156.896174418574},{\"x\":1945.5801678872156,\"y\":1156.896174418574},{\"x\":1949.365458379533,\"y\":1155.0059284105666},{\"x\":1955.043394118009,\"y\":1153.1156824025593}],\"color\":\"#BB8FCE\",\"closed\":false,\"isSinglePoint\":false,\"startTime\":0,\"endTime\":1,\"interpolation\":\"linear\",\"visibilityMode\":\"pop\"},{\"id\":\"path_1763675959994\",\"name\":\"Path 18\",\"points\":[{\"x\":2144.3079187338803,\"y\":1408.2988934835396},{\"x\":2138.629982995404,\"y\":1408.2988934835396},{\"x\":2134.844692503087,\"y\":1408.2988934835396},{\"x\":2129.166756764611,\"y\":1408.2988934835396},{\"x\":2121.596175779976,\"y\":1404.5184014675249},{\"x\":2115.9182400414998,\"y\":1404.5184014675249},{\"x\":2112.1329495491823,\"y\":1402.6281554595178},{\"x\":2106.455013810706,\"y\":1402.6281554595178},{\"x\":2100.77707807223,\"y\":1400.7379094515104},{\"x\":2095.099142333754,\"y\":1398.8476634435033},{\"x\":2089.421206595278,\"y\":1395.0671714274886},{\"x\":2083.7432708568017,\"y\":1393.1769254194814},{\"x\":2076.1726898721668,\"y\":1393.1769254194814},{\"x\":2070.4947541336905,\"y\":1391.286679411474},{\"x\":2059.1388826567386,\"y\":1389.396433403467},{\"x\":2051.5683016721036,\"y\":1387.5061873954596},{\"x\":2040.2124301951512,\"y\":1385.6159413874523},{\"x\":2032.6418492105163,\"y\":1383.7256953794451},{\"x\":2025.0712682258816,\"y\":1383.7256953794451},{\"x\":2021.285977733564,\"y\":1381.8354493714378},{\"x\":2017.5006872412466,\"y\":1381.8354493714378},{\"x\":2008.0374610104532,\"y\":1379.9452033634307},{\"x\":1998.5742347796595,\"y\":1376.164711347416},{\"x\":1987.2183633027073,\"y\":1376.164711347416},{\"x\":1977.7551370719136,\"y\":1374.2744653394088},{\"x\":1966.3992655949614,\"y\":1374.2744653394088},{\"x\":1960.7213298564852,\"y\":1372.3842193314015},{\"x\":1955.043394118009,\"y\":1370.4939733233944},{\"x\":1947.4728131333743,\"y\":1370.4939733233944},{\"x\":1939.9022321487394,\"y\":1370.4939733233944},{\"x\":1930.439005917946,\"y\":1368.603727315387},{\"x\":1922.868424933311,\"y\":1368.603727315387},{\"x\":1913.4051987025173,\"y\":1366.7134813073799},{\"x\":1909.6199082102,\"y\":1366.7134813073799},{\"x\":1903.9419724717238,\"y\":1366.7134813073799},{\"x\":1898.2640367332476,\"y\":1366.7134813073799},{\"x\":1892.5861009947716,\"y\":1364.8232352993725},{\"x\":1886.9081652562954,\"y\":1362.9329892913652},{\"x\":1881.2302295178192,\"y\":1362.9329892913652},{\"x\":1871.7670032870258,\"y\":1361.042743283358},{\"x\":1867.9817127947083,\"y\":1361.042743283358},{\"x\":1860.4111318100734,\"y\":1361.042743283358},{\"x\":1854.7331960715971,\"y\":1361.042743283358},{\"x\":1850.94790557928,\"y\":1357.2622512673436},{\"x\":1847.1626150869624,\"y\":1357.2622512673436},{\"x\":1841.4846793484862,\"y\":1357.2622512673436},{\"x\":1833.9140983638515,\"y\":1355.3720052593362},{\"x\":1828.2361626253753,\"y\":1355.3720052593362},{\"x\":1824.4508721330578,\"y\":1353.4817592513289},{\"x\":1816.8802911484229,\"y\":1353.4817592513289},{\"x\":1811.202355409947,\"y\":1353.4817592513289},{\"x\":1807.4170649176294,\"y\":1351.5915132433217},{\"x\":1803.631774425312,\"y\":1351.5915132433217},{\"x\":1797.9538386868358,\"y\":1351.5915132433217},{\"x\":1794.1685481945185,\"y\":1351.5915132433217},{\"x\":1790.383257702201,\"y\":1349.7012672353144},{\"x\":1784.7053219637248,\"y\":1349.7012672353144},{\"x\":1777.1347409790899,\"y\":1349.7012672353144},{\"x\":1771.456805240614,\"y\":1349.7012672353144},{\"x\":1765.7788695021377,\"y\":1347.8110212273073},{\"x\":1758.2082885175028,\"y\":1345.9207752193},{\"x\":1754.4229980251855,\"y\":1345.9207752193},{\"x\":1750.637707532868,\"y\":1345.9207752193},{\"x\":1746.8524170405506,\"y\":1345.9207752193},{\"x\":1739.2818360559156,\"y\":1345.9207752193},{\"x\":1735.4965455635984,\"y\":1344.0305292112926},{\"x\":1731.711255071281,\"y\":1344.0305292112926},{\"x\":1727.9259645789634,\"y\":1344.0305292112926},{\"x\":1724.140674086646,\"y\":1344.0305292112926},{\"x\":1720.3553835943285,\"y\":1344.0305292112926},{\"x\":1716.5700931020112,\"y\":1344.0305292112926},{\"x\":1712.7848026096938,\"y\":1344.0305292112926}],\"color\":\"#4ECDC4\",\"closed\":false,\"isSinglePoint\":false,\"startTime\":0,\"endTime\":1,\"interpolation\":\"linear\",\"visibilityMode\":\"pop\"},{\"id\":\"path_1763675975276\",\"name\":\"Path 19\",\"points\":[{\"x\":109.71427911326295,\"y\":1262.7499508669805},{\"x\":113.49956960558038,\"y\":1260.8597048589731},{\"x\":121.07015059021523,\"y\":1257.0792128429587},{\"x\":124.85544108253266,\"y\":1253.2987208269442},{\"x\":126.74808632869137,\"y\":1249.5182288109297},{\"x\":130.5333768210088,\"y\":1241.9572447789005},{\"x\":138.10395780564366,\"y\":1236.286506754879},{\"x\":143.7818935441198,\"y\":1228.7255227228497},{\"x\":149.45982928259593,\"y\":1219.2742926828134},{\"x\":153.24511977491338,\"y\":1211.7133086507845},{\"x\":160.81570075954824,\"y\":1204.1523246187553},{\"x\":168.3862817441831,\"y\":1198.4815865947337},{\"x\":175.95686272881795,\"y\":1190.9206025627045},{\"x\":183.5274437134528,\"y\":1181.4693725226682},{\"x\":191.09802469808764,\"y\":1173.9083884906393},{\"x\":202.45389617503994,\"y\":1162.5669124425956},{\"x\":210.0244771596748,\"y\":1155.0059284105666},{\"x\":219.48770339046837,\"y\":1145.5546983705303},{\"x\":228.95092962126193,\"y\":1137.9937143385014},{\"x\":242.19944634437294,\"y\":1124.7619922824506},{\"x\":259.23325355980137,\"y\":1115.3107622424143},{\"x\":274.3744155290711,\"y\":1103.9692861943706},{\"x\":289.5155774983408,\"y\":1092.627810146327},{\"x\":300.87144897529305,\"y\":1083.1765801062907},{\"x\":316.01261094456277,\"y\":1071.8351040582472},{\"x\":331.1537729138325,\"y\":1062.383874018211},{\"x\":342.5096443907848,\"y\":1051.0423979701673},{\"x\":357.6508063600545,\"y\":1043.4814139381383},{\"x\":370.8993230831655,\"y\":1032.1399378900946},{\"x\":380.36254931395905,\"y\":1026.469199866073},{\"x\":389.8257755447526,\"y\":1020.7984618420512},{\"x\":397.3963565293875,\"y\":1013.2374778100221},{\"x\":406.85958276018107,\"y\":1007.5667397860003},{\"x\":414.4301637448159,\"y\":1001.8960017619786},{\"x\":427.6786804679269,\"y\":990.554525713935},{\"x\":440.9271971910379,\"y\":979.2130496658915},{\"x\":452.28306866799016,\"y\":969.7618196258552},{\"x\":465.5315853911012,\"y\":958.4203435778116},{\"x\":480.6727473603709,\"y\":948.9691135377753},{\"x\":492.02861883732317,\"y\":937.6276374897317},{\"x\":503.38449031427547,\"y\":928.1764074496955},{\"x\":509.0624260527516,\"y\":920.6154234176664},{\"x\":510.9550712989103,\"y\":916.8349314016518},{\"x\":516.6330070373865,\"y\":914.9446853936446},{\"x\":518.5256522835451,\"y\":911.1641933776301},{\"x\":524.2035880220213,\"y\":903.603209345601},{\"x\":527.9888785143387,\"y\":899.8227173295866},{\"x\":531.7741690066562,\"y\":896.042225313572},{\"x\":535.5594594989736,\"y\":896.042225313572}],\"color\":\"#4ECDC4\",\"closed\":false,\"isSinglePoint\":false,\"startTime\":0,\"endTime\":1,\"interpolation\":\"linear\",\"visibilityMode\":\"pop\"},{\"id\":\"path_1763675977745\",\"name\":\"Path 20\",\"points\":[{\"x\":840.2753441305266,\"y\":1330.7988071552418},{\"x\":834.5974083920504,\"y\":1332.6890531632491},{\"x\":830.8121178997329,\"y\":1332.6890531632491},{\"x\":827.0268274074156,\"y\":1332.6890531632491},{\"x\":821.3488916689394,\"y\":1332.6890531632491},{\"x\":811.8856654381458,\"y\":1332.6890531632491},{\"x\":804.315084453511,\"y\":1332.6890531632491},{\"x\":791.0665677304,\"y\":1332.6890531632491},{\"x\":777.818051007289,\"y\":1332.6890531632491},{\"x\":764.569534284178,\"y\":1328.9085611472346},{\"x\":747.5357270687496,\"y\":1327.0183151392273},{\"x\":730.5019198533212,\"y\":1325.12806913122},{\"x\":715.3607578840514,\"y\":1323.2378231232128},{\"x\":700.2195959147817,\"y\":1323.2378231232128},{\"x\":688.8637244378294,\"y\":1323.2378231232128},{\"x\":677.5078529608771,\"y\":1323.2378231232128},{\"x\":662.3666909916075,\"y\":1323.2378231232128},{\"x\":651.0108195146552,\"y\":1323.2378231232128},{\"x\":637.7623027915441,\"y\":1323.2378231232128},{\"x\":624.5137860684332,\"y\":1323.2378231232128},{\"x\":613.1579145914809,\"y\":1323.2378231232128},{\"x\":603.6946883606873,\"y\":1323.2378231232128},{\"x\":596.1241073760524,\"y\":1323.2378231232128},{\"x\":586.6608811452588,\"y\":1323.2378231232128},{\"x\":579.090300160624,\"y\":1323.2378231232128},{\"x\":569.6270739298304,\"y\":1323.2378231232128},{\"x\":562.0564929451956,\"y\":1323.2378231232128},{\"x\":550.7006214682433,\"y\":1323.2378231232128},{\"x\":541.2373952374497,\"y\":1323.2378231232128},{\"x\":529.8815237604974,\"y\":1323.2378231232128},{\"x\":520.4182975297039,\"y\":1323.2378231232128},{\"x\":510.9550712989103,\"y\":1323.2378231232128},{\"x\":501.49184506811673,\"y\":1323.2378231232128},{\"x\":490.1359735911645,\"y\":1323.2378231232128},{\"x\":474.99481162189477,\"y\":1325.12806913122},{\"x\":461.74629489878373,\"y\":1327.0183151392273},{\"x\":446.605132929514,\"y\":1327.0183151392273},{\"x\":427.6786804679269,\"y\":1328.9085611472346},{\"x\":410.6448732524985,\"y\":1330.7988071552418},{\"x\":391.71842079091135,\"y\":1332.6890531632491},{\"x\":369.00667783700675,\"y\":1334.5792991712563},{\"x\":346.2949348831022,\"y\":1338.359791187271},{\"x\":323.58319192919765,\"y\":1342.1402832032854},{\"x\":308.44202995992794,\"y\":1344.0305292112926},{\"x\":297.08615848297563,\"y\":1344.0305292112926}],\"color\":\"#BB8FCE\",\"closed\":false,\"isSinglePoint\":false,\"startTime\":0,\"endTime\":1,\"interpolation\":\"linear\",\"visibilityMode\":\"pop\"},{\"id\":\"path_1763675983037\",\"name\":\"Static 1\",\"points\":[{\"x\":1294.510203208618,\"y\":693.7859024567952}],\"color\":\"#4ECDC4\",\"isSinglePoint\":true,\"startTime\":0,\"endTime\":1,\"interpolation\":\"linear\",\"visibilityMode\":\"pop\"},{\"id\":\"path_1763675987957\",\"name\":\"Static 2\",\"points\":[{\"x\":2246.510762026451,\"y\":202.32194037490757}],\"color\":\"#98D8C8\",\"isSinglePoint\":true,\"startTime\":0,\"endTime\":1,\"interpolation\":\"linear\",\"visibilityMode\":\"pop\"}],\"canvas_size\":{\"width\":2560,\"height\":1440}}",
+        25,
+        512,
+        512,
+        "circle",
+        20,
+        "red",
+        10,
+        0,
+        "accumulate",
+        true,
+        0.036,
+        false,
+        1,
+        1,
+        "black",
+        0,
+        0,
+        3072,
+        20,
+        8000,
+        0,
+        null,
+        "22 paths (2 static, 20 motion)"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 541,
+      "type": "Note",
+      "pos": [
+        -2491.6278144536163,
+        852.5618562974969
+      ],
+      "size": [
+        258.47957585310564,
+        438.9029531119578
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Parameters",
+      "properties": {},
+      "widgets_values": [
+        "RyanOnTheInside: \n\nhttps://github.com/ryanontheinside/ComfyUI_RyanOnTheInside\n\nfillip lividtm: \n\nhttps://huggingface.co/lividtm/Wan_ATI/tree/main\n\nGoogle antigravity.: \n\nhttps://antigravity.google/"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 458,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -2217.692909021898,
+        669.9184342205455
+      ],
+      "size": [
+        367.8466444114888,
+        147.6519153940127
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 837
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            823
+          ]
+        }
+      ],
+      "title": "CLIP Text Encode (Positive Prompt)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.34",
+        "Node name for S&R": "CLIPTextEncode",
+        "ue_properties": {
+          "version": "7.2.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "a man in the middle of androgenic beings waving violently, with exaggerated head movements\n"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 443,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        -2193.0338792817593,
+        390.60123383817523
+      ],
+      "size": [
+        324.13282988508945,
+        82
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 806
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            949
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.34",
+        "Node name for S&R": "LoraLoaderModelOnly",
+        "models": [
+          {
+            "name": "Wan21_CausVid_14B_T2V_lora_rank32.safetensors",
+            "url": "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan21_CausVid_14B_T2V_lora_rank32.safetensors",
+            "directory": "loras"
+          }
+        ],
+        "ue_properties": {
+          "version": "7.2.2",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "Wan2.1\\Wan21_CausVid_14B_T2V_lora_rank32_v2.safetensors",
+        0.8
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    }
+  ],
+  "links": [
+    [
+      805,
+      439,
+      0,
+      441,
+      0,
+      "CLIP"
+    ],
+    [
+      806,
+      442,
+      0,
+      443,
+      0,
+      "MODEL"
+    ],
+    [
+      808,
+      444,
+      0,
+      445,
+      0,
+      "MODEL"
+    ],
+    [
+      809,
+      445,
+      0,
+      446,
+      0,
+      "MODEL"
+    ],
+    [
+      810,
+      460,
+      0,
+      448,
+      0,
+      "IMAGE"
+    ],
+    [
+      811,
+      459,
+      0,
+      448,
+      2,
+      "INT"
+    ],
+    [
+      812,
+      459,
+      0,
+      448,
+      3,
+      "INT"
+    ],
+    [
+      813,
+      456,
+      0,
+      449,
+      0,
+      "IMAGE"
+    ],
+    [
+      816,
+      447,
+      0,
+      452,
+      0,
+      "CLIP_VISION"
+    ],
+    [
+      817,
+      448,
+      0,
+      452,
+      1,
+      "IMAGE"
+    ],
+    [
+      819,
+      454,
+      0,
+      453,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      820,
+      454,
+      1,
+      453,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      821,
+      454,
+      2,
+      453,
+      3,
+      "LATENT"
+    ],
+    [
+      822,
+      440,
+      0,
+      453,
+      4,
+      "VAE"
+    ],
+    [
+      823,
+      458,
+      0,
+      454,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      824,
+      441,
+      0,
+      454,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      825,
+      440,
+      0,
+      454,
+      2,
+      "VAE"
+    ],
+    [
+      826,
+      448,
+      0,
+      454,
+      3,
+      "IMAGE"
+    ],
+    [
+      827,
+      452,
+      0,
+      454,
+      4,
+      "CLIP_VISION_OUTPUT"
+    ],
+    [
+      829,
+      449,
+      1,
+      454,
+      6,
+      "INT"
+    ],
+    [
+      830,
+      449,
+      2,
+      454,
+      7,
+      "INT"
+    ],
+    [
+      833,
+      448,
+      0,
+      456,
+      0,
+      "IMAGE"
+    ],
+    [
+      837,
+      439,
+      0,
+      458,
+      0,
+      "CLIP"
+    ],
+    [
+      844,
+      463,
+      0,
+      453,
+      0,
+      "MODEL"
+    ],
+    [
+      874,
+      446,
+      0,
+      486,
+      0,
+      "MODEL"
+    ],
+    [
+      875,
+      486,
+      0,
+      463,
+      0,
+      "*"
+    ],
+    [
+      885,
+      492,
+      0,
+      491,
+      0,
+      "OPEN_UNMIX_MODEL"
+    ],
+    [
+      886,
+      474,
+      0,
+      491,
+      1,
+      "AUDIO"
+    ],
+    [
+      904,
+      491,
+      0,
+      470,
+      0,
+      "AUDIO"
+    ],
+    [
+      913,
+      470,
+      0,
+      502,
+      1,
+      "FEATURE"
+    ],
+    [
+      914,
+      491,
+      1,
+      502,
+      0,
+      "AUDIO"
+    ],
+    [
+      915,
+      502,
+      0,
+      495,
+      0,
+      "IMAGE"
+    ],
+    [
+      916,
+      491,
+      1,
+      495,
+      1,
+      "AUDIO"
+    ],
+    [
+      918,
+      449,
+      1,
+      502,
+      3,
+      "INT"
+    ],
+    [
+      919,
+      449,
+      2,
+      502,
+      4,
+      "INT"
+    ],
+    [
+      924,
+      449,
+      3,
+      502,
+      5,
+      "INT"
+    ],
+    [
+      927,
+      502,
+      2,
+      504,
+      1,
+      "STRING"
+    ],
+    [
+      930,
+      449,
+      3,
+      470,
+      2,
+      "INT"
+    ],
+    [
+      931,
+      449,
+      1,
+      470,
+      3,
+      "INT"
+    ],
+    [
+      932,
+      449,
+      2,
+      470,
+      4,
+      "INT"
+    ],
+    [
+      933,
+      502,
+      2,
+      454,
+      5,
+      "STRING"
+    ],
+    [
+      942,
+      504,
+      0,
+      509,
+      0,
+      "IMAGE"
+    ],
+    [
+      945,
+      491,
+      0,
+      510,
+      1,
+      "AUDIO"
+    ],
+    [
+      949,
+      443,
+      0,
+      513,
+      0,
+      "MODEL"
+    ],
+    [
+      950,
+      513,
+      0,
+      444,
+      0,
+      "MODEL"
+    ],
+    [
+      962,
+      491,
+      0,
+      506,
+      1,
+      "AUDIO"
+    ],
+    [
+      967,
+      509,
+      0,
+      510,
+      0,
+      "IMAGE"
+    ],
+    [
+      977,
+      449,
+      3,
+      454,
+      8,
+      "INT"
+    ],
+    [
+      978,
+      529,
+      0,
+      470,
+      1,
+      "FLOAT"
+    ],
+    [
+      979,
+      529,
+      0,
+      502,
+      2,
+      "FLOAT"
+    ],
+    [
+      980,
+      529,
+      0,
+      495,
+      4,
+      "FLOAT"
+    ],
+    [
+      981,
+      529,
+      0,
+      510,
+      4,
+      "FLOAT"
+    ],
+    [
+      982,
+      529,
+      0,
+      506,
+      4,
+      "FLOAT"
+    ],
+    [
+      983,
+      453,
+      5,
+      506,
+      0,
+      "IMAGE"
+    ],
+    [
+      984,
+      453,
+      5,
+      509,
+      1,
+      "IMAGE"
+    ],
+    [
+      985,
+      453,
+      5,
+      504,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 4,
+      "title": "Model",
+      "bounding": [
+        -2213.931013471836,
+        -54.72622417339478,
+        661.9059260462416,
+        673.4562422643095
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "Audio",
+      "bounding": [
+        -2217.2655414186074,
+        821.5951594565556,
+        642.4375592603994,
+        471.7308079399072
+      ],
+      "color": "#A88",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 6,
+      "title": "Image",
+      "bounding": [
+        -2214.476426561145,
+        1313.7510256079133,
+        639.3814646988014,
+        439.1959866882396
+      ],
+      "color": "#8A8",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8390545288825111,
+      "offset": [
+        1783.0756055646057,
+        -733.2338551042911
+      ]
+    },
+    "frontendVersion": "1.28.8",
+    "node_versions": {
+      "comfy-core": "0.3.34"
+    },
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true,
+    "ue_links": [],
+    "links_added_by_ue": []
+  },
+  "version": 0.4
+}
