@@ -65,6 +65,7 @@ duration_frames: Forces the animation to be a specific number of frames.
 frame_rate: The FPS of the output animation.
 fft_size, min_frequency, max_frequency: Advanced audio analysis settings to isolate specific frequency ranges (e.g., set min/max to 20-150Hz to only react to bass).
 >
-> <p align="center">
+>
+<p align="center">
   <img src="./assets/Nodes.png" alt="node" width="70%">
 </p>
