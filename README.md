@@ -17,6 +17,7 @@ Little experiment of mixing RyanOnTheInside's reactive nodes with Fillip's ATI P
 </p>
 
 
+
 ## Here is the complete list of parameters for the Audio Reactive Path Animator node and how they work:
 
 ## Main Controls
@@ -63,3 +64,7 @@ duration_frames: Forces the animation to be a specific number of frames.
 > 0: Stretches/squashes the audio to fit this exact frame count (useful for syncing with video models like Wan/Kling).
 frame_rate: The FPS of the output animation.
 fft_size, min_frequency, max_frequency: Advanced audio analysis settings to isolate specific frequency ranges (e.g., set min/max to 20-150Hz to only react to bass).
+>
+> <p align="center">
+  <img src="./assets/Nodes.png" alt="node" width="70%">
+</p>
