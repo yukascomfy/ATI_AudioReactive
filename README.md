@@ -10,7 +10,7 @@ https://github.com/ryanontheinside/ComfyUI_RyanOnTheInside
 https://huggingface.co/lividtm/Wan_ATI/tree/main
 
 
-Little experiment of mixing RyanOnTheInside's reactive nodes with Fillip's ATI Path Animation. using Google antigravity. I'm not a programmer, I'm posting it for anyone who wants to play for a while, it needs to be adjusted and I'm sure it has bugs
+Little experiment of mixing RyanOnTheInside's Audio reactive nodes with Fillip's ATI Path Animation. using Google antigravity. I'm not a programmer, I'm posting it for anyone who wants to play for a while, it needs to be adjusted and I'm sure it has bugs
 
 <p align="center">
   <img src="./assets/gif.gif" alt="gif" width="70%">
