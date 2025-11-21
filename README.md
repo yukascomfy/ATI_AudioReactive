@@ -12,6 +12,11 @@ https://huggingface.co/lividtm/Wan_ATI/tree/main
 
 Little experiment of mixing RyanOnTheInside's reactive nodes with Fillip's ATI Path Animation. using Google antigravity. I'm not a programmer, I'm posting it for anyone who wants to play for a while, it needs to be adjusted and I'm sure it has bugs
 
+<p align="center">
+  <img src="./assets/gif.gif" alt="gif" width="70%">
+</p>
+
+
 ## Here is the complete list of parameters for the Audio Reactive Path Animator node and how they work:
 
 ## Main Controls
